@@ -16,7 +16,7 @@ sudo -H pip install pelican jupyter ghp-import ipython nbconvert markdown
 git checkout -b source
 ```
 
-## 3)
+## 3) Make this changes to pelicanconfig.py
 
 Change git for https on pelicanconf.py
 
@@ -35,6 +35,12 @@ On output/ try the following code:
 python -m SimpleHTTPServer 8000
 ```
 
-```
+Setup publishconf.py
+```sh
 pelican content -s publishconf.py
+```
+
+Copy the output/ of branch source to branch master
+```sh
+ghp-import output -b master
 ```
