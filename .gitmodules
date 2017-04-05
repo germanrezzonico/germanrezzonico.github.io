@@ -1,3 +1,6 @@
 [submodule "plugins/ipynb"]
 	path = plugins/ipynb
 	url = https://github.com/danielfrg/pelican-ipynb.git
+[submodule "themes/nest"]
+	path = themes/nest
+	url = https://github.com/molivier/nest.git
