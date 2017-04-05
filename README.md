@@ -4,24 +4,33 @@ This repository follows [Udacity Commit Style Guide](http://udacity.github.io/gi
 
 Follow [this instructions](https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/)
 
-## 1) Install
+## Install
 
 ```sh
 sudo -H pip install pelican jupyter ghp-import ipython nbconvert markdown
 ```
 
-## 2) Create a different branch from master
+## Create a different branch from master
 
 ```sh
 git checkout -b source
 ```
 
-## 3) Make this changes to pelicanconfig.py
+## Make this changes to pelicanconfig.py
 
-Change git for https on pelicanconf.py
+```py
+MARKUP = ('md', 'ipynb')
 
+PLUGIN_PATH = './plugins'
+PLUGINS = ['ipynb.markup']
+```
 
-## 4) To load content
+## Add plugin
+```sh
+git submodule add https://github.com/danielfrg/pelican-ipynb.git plugins/ipynb
+```
+
+## Load and test content
 
 Put some content on content/ and then execute this code on the base folder>
 
@@ -35,6 +44,8 @@ On output/ try the following code:
 python -m SimpleHTTPServer 8000
 ```
 
+## Push content to github
+
 Setup publishconf.py
 ```sh
 pelican content -s publishconf.py
@@ -43,4 +54,9 @@ pelican content -s publishconf.py
 Copy the output/ of branch source to branch master
 ```sh
 ghp-import output -b master
+```
+
+Push content to github
+```sh
+git push origin master
 ```
