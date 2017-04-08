@@ -73,13 +73,13 @@ git push origin master
 
 ```sh
 mkdir themes
-git submodule add https://github.com/molivier/nest.git themes/nest
+git submodule add https://github.com/gilsondev/pelican-clean-blog.git themes/pelican-clean-blog
 ```
 
 Add this lines to pelicanconfig.py
 
 ```
-THEME = 'themes/nest'
+THEME = 'themes/pelican-clean-blog'
 ```
 
 ## To remove a git submodule

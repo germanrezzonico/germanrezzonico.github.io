@@ -4,3 +4,6 @@
 [submodule "themes/nest"]
 	path = themes/nest
 	url = https://github.com/molivier/nest.git
+[submodule "themes/pelican-clean-blog"]
+	path = themes/pelican-clean-blog
+	url = https://github.com/gilsondev/pelican-clean-blog.git
