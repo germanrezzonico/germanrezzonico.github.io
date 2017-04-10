@@ -177,21 +177,13 @@ sudo python setup.py install)
 
 
 <h3>Install matplotlib Toolkits</h3>
-<div class="highlight"><pre><span></span>http://matplotlib.org/1.4.3/mpl_toolkits/index.html
-
-https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/
-</pre></div>
-
-
+<p>http://matplotlib.org/1.4.3/mpl_toolkits/index.html</p>
+<p>https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/</p>
 <div class="highlight"><pre><span></span>sudo apt-get install -f python-mpltoolkits.basemap
 </pre></div>
 
 
-<h3>Install xgboost</h3>
-<div class="highlight"><pre><span></span>https://xgboost.readthedocs.io/en/latest/build.html
-</pre></div>
-
-
+<h3>Install <a href="https://xgboost.readthedocs.io/en/latest/build.html">xgboost</a></h3>
 <div class="highlight"><pre><span></span>git clone --recursive https://github.com/dmlc/xgboost
 <span class="nb">cd</span> xgboost<span class="p">;</span> cp make/config.mk ./config.mk<span class="p">;</span> make -j4
 python setup.py develop --user
@@ -199,10 +191,7 @@ python setup.py develop --user
 
 
 <h3>Install tensorflow with virtualenv</h3>
-<div class="highlight"><pre><span></span>https://www.tensorflow.org/install/install_linux
-</pre></div>
-
-
+<p>https://www.tensorflow.org/install/install_linux</p>
 <div class="highlight"><pre><span></span>sudo apt-get install -f python-pip python-dev python-virtualenv
 virtualenv --system-site-packages tensorflow # target diectory
 source ~/tensorflow/bin/activate # (tensorflow)$
@@ -254,10 +243,7 @@ sudo apt-get install -f graphviz
 
 
 <h3>Install keras</h3>
-<div class="highlight"><pre><span></span>https://keras.io/#installation
-</pre></div>
-
-
+<p>https://keras.io/#installation</p>
 <h4>Required dependencies</h4>
 <ul>
 <li>numpy, scipy</li>
@@ -277,10 +263,7 @@ sudo apt-get install -f python-h5py
 
 
 <h4>Using a virtualenv in an IPython notebook (install kernels)</h4>
-<div class="highlight"><pre><span></span>https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
-</pre></div>
-
-
+<p>https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/</p>
 <div class="highlight"><pre><span></span>source ~/tensorflow/bin/activate
 python2 -m ipykernel install --user
 python -m ipykernel install --user --name tensorflow --display-name &quot;Python tensorflow&quot;

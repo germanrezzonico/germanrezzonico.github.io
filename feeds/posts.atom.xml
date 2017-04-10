@@ -65,21 +65,13 @@ sudo python setup.py install)
 
 
 &lt;h3&gt;Install matplotlib Toolkits&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://matplotlib.org/1.4.3/mpl_toolkits/index.html
-
-https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;http://matplotlib.org/1.4.3/mpl_toolkits/index.html&lt;/p&gt;
+&lt;p&gt;https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-mpltoolkits.basemap
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Install xgboost&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://xgboost.readthedocs.io/en/latest/build.html
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;h3&gt;Install &lt;a href="https://xgboost.readthedocs.io/en/latest/build.html"&gt;xgboost&lt;/a&gt;&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/dmlc/xgboost
 &lt;span class="nb"&gt;cd&lt;/span&gt; xgboost&lt;span class="p"&gt;;&lt;/span&gt; cp make/config.mk ./config.mk&lt;span class="p"&gt;;&lt;/span&gt; make -j4
 python setup.py develop --user
@@ -87,10 +79,7 @@ python setup.py develop --user
 
 
 &lt;h3&gt;Install tensorflow with virtualenv&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://www.tensorflow.org/install/install_linux
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;https://www.tensorflow.org/install/install_linux&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-pip python-dev python-virtualenv
 virtualenv --system-site-packages tensorflow # target diectory
 source ~/tensorflow/bin/activate # (tensorflow)$
@@ -142,10 +131,7 @@ sudo apt-get install -f graphviz
 
 
 &lt;h3&gt;Install keras&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://keras.io/#installation
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;https://keras.io/#installation&lt;/p&gt;
 &lt;h4&gt;Required dependencies&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;numpy, scipy&lt;/li&gt;
@@ -165,10 +151,7 @@ sudo apt-get install -f python-h5py
 
 
 &lt;h4&gt;Using a virtualenv in an IPython notebook (install kernels)&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source ~/tensorflow/bin/activate
 python2 -m ipykernel install --user
 python -m ipykernel install --user --name tensorflow --display-name &amp;quot;Python tensorflow&amp;quot;
@@ -355,7 +338,7 @@ sudo apt-get -f -y install
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h4&gt;To make de dafault text editor&lt;/h4&gt;
+&lt;h4&gt;To make it the default text editor&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/gedit.desktop/sublime\-text\.desktop/g&amp;#39;&lt;/span&gt; /usr/share/applications/defaults.list
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -370,15 +353,11 @@ sudo apt-get -f -y install
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;&lt;/h3&gt;
 &lt;h3&gt;Android Studio&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://tamingandroidcode.blogspot.com.ar/2013/12/running-android-studio-on-chromebook.html
+&lt;p&gt;http://tamingandroidcode.blogspot.com.ar/2013/12/running-android-studio-on-chromebook.html
 http://tomwwolf.com/2013/11/20/howto-android-development-on-chromebook/
 https://sendgrid.com/blog/develop-native-android-apps-chromebook/
-http://tomwwolf.com/chromebook-14-compedium/ubuntu-cookbook/
-&lt;/pre&gt;&lt;/div&gt;
-
-
+http://tomwwolf.com/chromebook-14-compedium/ubuntu-cookbook/&lt;/p&gt;
 &lt;h4&gt;JAVA JDK 7&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-x64.tar.gz
 sudo tar -xvzf ~/jdk-7u75-linux-x64.tar.gz
@@ -475,7 +454,7 @@ sudo apt-get install -y git-core
 
 
 &lt;h2&gt;10 . The Ubuntu installation via crouton doesnt have much on ti, if you would like to install some basic libraries:&lt;/h2&gt;
-&lt;p&gt;*Follow the instructions in this &lt;a href="programming-env-chromebook.html"&gt;post&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="crouton"></category><category term="Acer C720"></category></entry><entry><title>Markdown post test</title><link href="https://germanrezzonico.github.io/mardown-post.html" rel="alternate"></link><published>2017-04-04T17:14:00-03:00</published><updated>2017-04-04T17:14:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-04:/mardown-post.html</id><summary type="html">&lt;p&gt;This is post is written using markdown.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This post is written in Markdown&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Follow the instructions in this &lt;a href="programming-env-chromebook.html"&gt;post&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="crouton"></category><category term="Acer C720"></category></entry><entry><title>Markdown post test</title><link href="https://germanrezzonico.github.io/mardown-post.html" rel="alternate"></link><published>2017-04-04T17:14:00-03:00</published><updated>2017-04-04T17:14:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-04:/mardown-post.html</id><summary type="html">&lt;p&gt;This is post is written using markdown.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This post is written in Markdown&lt;/h1&gt;
 &lt;h2&gt;Ordered lists&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;first item&lt;/li&gt;
