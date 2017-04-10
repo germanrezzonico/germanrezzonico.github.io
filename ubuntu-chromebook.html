@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Machine Learning and More - Archives</title>
+        <title>Ubuntu 14.04.5 LTS (trusty) on a Chromebook</title>
 
             <link href="https://germanrezzonico.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Full Atom Feed" />
+            <link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Categories Atom Feed" />
         <!-- Bootstrap Core CSS -->
         <link href="https://germanrezzonico.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,8 +33,29 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-                <meta property="og:locale" content="">
+
+
+        <meta name="description" content="Installing Ubuntu 14.04.5 LTS (trusty) via cruoton on Chromebook Acer C720-2802.">
+
+        <meta name="author" content="German Rezzonico">
+
+        <meta name="tags" content="python">
+        <meta name="tags" content="chromebook">
+        <meta name="tags" content="ubuntu">
+        <meta name="tags" content="crouton">
+        <meta name="tags" content="Acer C720">
+
+	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Machine Learning and More">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="https://germanrezzonico.github.io/author/german-rezzonico.html">
+	<meta property="og:url" content="https://germanrezzonico.github.io/ubuntu-chromebook.html">
+	<meta property="og:title" content="Ubuntu 14.04.5 LTS (trusty) on a Chromebook">
+	<meta property="article:published_time" content="2017-04-05 22:00:00-03:00">
+            <meta property="og:description" content="Installing Ubuntu 14.04.5 LTS (trusty) via cruoton on Chromebook Acer C720-2802.">
+
+            <meta property="og:image" content="https://germanrezzonico.github.io//images/chromebook.jpg">
 </head>
 
 <body>
@@ -64,12 +86,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/stock_desk.jpg')">
+        <header class="intro-header" style="background-image: url('/images/chromebook.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Archives for Machine Learning and More</h1>
+                        <h1>Ubuntu 14.04.5 LTS (trusty) on a Chromebook</h1>
+                        <span class="meta">Posted by
+                                <a href="https://germanrezzonico.github.io/author/german-rezzonico.html">German Rezzonico</a>
+                             on Wed 05 April 2017
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -80,27 +107,88 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-    <dl>
-            <dt>Mon 10 April 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/tensor-keras-chromebook.html">Installing tensorflow and keras on a Chromebook</a></dd>
-            <dt>Fri 07 April 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/environment-chromebook.html">Machine learning on a Chromebook</a></dd>
-            <dt>Thu 06 April 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/programming-env-chromebook.html">Programming environment on a Chromebook</a></dd>
-            <dt>Wed 05 April 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/ubuntu-chromebook.html">Ubuntu 14.04.5 LTS (trusty) on a Chromebook</a></dd>
-            <dt>Tue 04 April 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/mardown-post.html">Markdown post test</a></dd>
-            <dt>Sat 07 January 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/smart-cab.html">Train a Smartcab to Drive</a></dd>
-            <dt>Thu 05 January 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/creating-customer-segments.html">Creating Customer Segments</a></dd>
-            <dt>Tue 03 January 2017</dt>
-            <dd><a href="https://germanrezzonico.github.io/student-intervention.html">Building a Student Intervention System</a></dd>
-            <dt>Tue 27 December 2016</dt>
-            <dd><a href="https://germanrezzonico.github.io/boston-housing.html">Boston Housing</a></dd>
-        <hr>
-    </dl>
+    <!-- Post Content -->
+    <article>
+        <h1>Instructions</h1>
+<p>To Install Ubuntu 14.04.5 LTS (trusty) on a SD Card via <a href="https://github.com/dnschneid/crouton">cruoton</a> on Chromebook Acer C720-2802, follow this instructions:</p>
+<h2>1 . enter the chromebook into the developer mode</h2>
+<p><em>Beaware enter developer mode will erase all data in the chromebook</em></p>
+<p>Press and hold the Esc and Refresh keys together, then press the Power button (while still holding the other two keys). This will reboot your Chromebook into Recovery Mode.</p>
+<p>As soon as you see Recovery Mode pop up—the screen with the yellow exclamation point—press Ctrl+D. This will bring up a prompt asking if you want to turn on Developer Mode.</p>
+<p>Press Enter to continue, then give it some time. It'll pop up with a new screen for a few moments, then reboot and go through the process of enabling Developer Mode. This may take a little while (about 15 minutes or so), and will wipe your local information.</p>
+<p>When it's done, it will return to the screen with the red exclamation point. Leave it alone until it reboots into Chrome OS or press Ctrl+D. Every time the chromebook restart this window will appear, if you dont press Ctrl+D it will continue but only after ~20seg or so and a few beeps.</p>
+<h2>2 . enter the chromebook with your google credentials (you wont be erasing all the data again)</h2>
+<h2>3. Download the latest <a href="https://github.com/dnschneid/crouton">cruoton</a> installer into the Downloads/ folder:</h2>
+<div class="highlight"><pre><span></span>https://goo.gl/fd3zc
+</pre></div>
+
+
+<h2>4 . press Ctrl+Alt+T this will open a shell window, while there you need to execute the crouton installer:</h2>
+<h3>To install ubuntu (trusty), we aware it will take some time, more than 30 minutes for sure.</h3>
+<div class="highlight"><pre><span></span>sudo sh -e ~/Downloads/crouton -u -e -k ~/Downloads -p /media/removable/SD<span class="se">\ </span>Card -n trusty
+</pre></div>
+
+
+<h3>To update and encrypt (a key file will be create in your Downloads/ folder, DO NOT loose it)</h3>
+<div class="highlight"><pre><span></span>sudo sh -e ~/Downloads/crouton -u -e -k ~/Downloads -p /media/removable/SD<span class="se">\ </span>Card -n trusty
+</pre></div>
+
+
+<h2>5 . Ubuntu is already install on your SD Card, to enter it:</h2>
+<div class="highlight"><pre><span></span>sudo bash /media/removable/SD<span class="se">\ </span>Card/bin/enter-chroot
+</pre></div>
+
+
+<p>OR</p>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /media/removable/SD<span class="se">\ </span>Card/bin
+sudo bash startunity -b
+</pre></div>
+
+
+<h2>6 . Update only</h2>
+<div class="highlight"><pre><span></span>sudo sh ~/Downloads/crouton -u -p /media/removable/SD<span class="se">\ </span>Card -n trusty
+</pre></div>
+
+
+<h2>7 . Backup chroot, this way the next time you need to restore your chromebook install crouton from that backup will take considerable less time.</h2>
+<p>(The backup file may have more than 5GB so run this command inside the definitive destination).</p>
+<div class="highlight"><pre><span></span>sudo bash /media/removable/SD<span class="se">\ </span>Card/bin/edit-chroot -b trusty
+</pre></div>
+
+
+<h2>8 . To restore a backup</h2>
+<div class="highlight"><pre><span></span>sudo sh ~/Downloads/crouton -f mybackup.tar.gz -p /media/removable/SD<span class="se">\ </span>Card/
+</pre></div>
+
+
+<h2>9 . You may also need to install git to work with your repos:</h2>
+<h3>install git</h3>
+<div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install -y git-core
+</pre></div>
+
+
+<h2>generate ssh keys</h2>
+<p>Modify this line with your email</p>
+<div class="highlight"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@provider.com&quot;</span>
+</pre></div>
+
+
+<h2>copy ssh keys to bitbucket, github, etc account via GUI</h2>
+<div class="highlight"><pre><span></span>cat ~/.ssh/id_rsa.pub
+</pre></div>
+
+
+<h2>10 . The Ubuntu installation via crouton doesnt have much on ti, if you would like to install some basic libraries:</h2>
+<p>*Follow the instructions in this <a href="programming-env-chromebook.html">post</a></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="https://germanrezzonico.github.io/tag/python.html">python</a>, <a href="https://germanrezzonico.github.io/tag/chromebook.html">chromebook</a>, <a href="https://germanrezzonico.github.io/tag/ubuntu.html">ubuntu</a>, <a href="https://germanrezzonico.github.io/tag/crouton.html">crouton</a>, <a href="https://germanrezzonico.github.io/tag/acer-c720.html">Acer C720</a></p>
+        </div>
+
+    <hr>
+
             </div>
         </div>
     </div>

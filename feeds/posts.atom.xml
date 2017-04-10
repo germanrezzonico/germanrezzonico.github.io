@@ -1,7 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Machine Learning and More - posts</title><link href="https://germanrezzonico.github.io/" rel="alternate"></link><link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://germanrezzonico.github.io/</id><updated>2017-04-07T22:00:00-03:00</updated><entry><title>Machine learning on a Chromebook</title><link href="https://germanrezzonico.github.io/environment-chromebook.html" rel="alternate"></link><published>2017-04-07T22:00:00-03:00</published><updated>2017-04-07T22:00:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-07:/environment-chromebook.html</id><summary type="html">&lt;p&gt;Setting up a machine learning environment on Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Machine learning on a Chromebook&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Machine Learning and More - posts</title><link href="https://germanrezzonico.github.io/" rel="alternate"></link><link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://germanrezzonico.github.io/</id><updated>2017-04-10T13:30:00-03:00</updated><entry><title>Installing tensorflow and keras on a Chromebook</title><link href="https://germanrezzonico.github.io/tensor-keras-chromebook.html" rel="alternate"></link><published>2017-04-10T13:30:00-03:00</published><updated>2017-04-10T13:30:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-10:/tensor-keras-chromebook.html</id><summary type="html">&lt;p&gt;Installing tensorflow and keras on a Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
+&lt;h2&gt;Install python 2.7, python-pip and python-dev&lt;/h2&gt;
+&lt;p&gt;Installing python2.7 will update to the latest version of Python 2.7, and python-pip will install Pip which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python2.7 python-pip python-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;To verify that you have python and pip installed:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python --version
+pip --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Installing Ipython&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f ipython ipython-notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Installing Jupyter Notebook&lt;/h2&gt;
+&lt;p&gt;-H, --set-home
+Request that the security policy set the HOME environment variable to the home directory specified by the target user's password database entry. Depending on the policy, this may be the default behavior.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install jupyter
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;If any error --&amp;gt; Upgrade pip to the latest version&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Try installing Jupyter again&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install jupyter
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Running Jupyter Notebook&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install packages&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-numpy python-pandas python-matplotlib
+
+sudo apt-get install -f build-essential python-dev python-setuptools python-numpy python-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python-matplotlib
+
+sudo apt-get install -f python-numpy-dev g++
+
+sudo -H pip install scikit-learn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To upgrade:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install --upgrade pandas
+sudo -H pip install matplotlib --upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install seaborn&lt;/h3&gt;
+&lt;p&gt;Download latest version of seaborn .tar.gz&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xzf seaborn-file.tar.gz
+cd seaborn-path/
+sudo python setup.py install)
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install matplotlib Toolkits&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://matplotlib.org/1.4.3/mpl_toolkits/index.html
+
+https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-mpltoolkits.basemap
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install xgboost&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://xgboost.readthedocs.io/en/latest/build.html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/dmlc/xgboost
+&lt;span class="nb"&gt;cd&lt;/span&gt; xgboost&lt;span class="p"&gt;;&lt;/span&gt; cp make/config.mk ./config.mk&lt;span class="p"&gt;;&lt;/span&gt; make -j4
+python setup.py develop --user
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install tensorflow with virtualenv&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://www.tensorflow.org/install/install_linux
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-pip python-dev python-virtualenv
+virtualenv --system-site-packages tensorflow # target diectory
+source ~/tensorflow/bin/activate # (tensorflow)$
+pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl # pip version lower than 8.1 Python 2.7  and cpu only
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Activate the virtualenv environment each time you use TensorFlow&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source ~/tensorflow/bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You shoul get something like this:
+(tensorflow)$&lt;/p&gt;
+&lt;p&gt;To deactivate:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;deactivate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Validate your tensorflow installation&lt;/h4&gt;
+&lt;p&gt;Active your container&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TensorFlow&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Uninstalling TensorFlow&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm -r targetDirectory
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install pydot and graphviz (for NN graph)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-pydot
+sudo -H pip install pydot-ng
+sudo -H pip install pydot --upgrade
+
+sudo apt-get install -f graphviz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install plotly (for EDA)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -h pip install plotly
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install keras&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://keras.io/#installation
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Required dependencies&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;numpy, scipy&lt;/li&gt;
+&lt;li&gt;yaml&lt;/li&gt;
+&lt;li&gt;HDF5 and h5py (optional, required if you use model saving/loading functions)&lt;/li&gt;
+&lt;li&gt;Optional but recommended if you use CNNs: cuDNN.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-yaml
+sudo apt-get install -f libhdf5-dev
+sudo apt-get install -f python-h5py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Install keras&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install keras
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Using a virtualenv in an IPython notebook (install kernels)&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source ~/tensorflow/bin/activate
+python2 -m ipykernel install --user
+python -m ipykernel install --user --name tensorflow --display-name &amp;quot;Python tensorflow&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Using Jupyter Notebook&lt;/h2&gt;
+&lt;p&gt;Automatically, Jupyter Notebook will show all of the files and folders in the directory it is run from.&lt;/p&gt;
+&lt;p&gt;To create a new notebook file, select New &amp;gt; Python 2 from the top right pull-down menu.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt jupyter new file" src="https://assets.digitalocean.com/articles/jupyter_notebook/create_python2_notebook.png"&gt;&lt;/p&gt;
+&lt;p&gt;This will open a notebook. We can now run Python code in the cell or change the cell to markdown. For example, change the first cell to accept Markdown by clicking Cell &amp;gt; Cell Type &amp;gt; Markdown from the top navigation bar. We can now write notes using Markdown and even include equations written in LaTeX by putting them between the $$ symbols. For example, type the following into the cell after changing it to markdown:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Simple Equation
+
+Let us now implement the following equation:
+$$ y = x^2$$
+
+where $x = 2$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To turn the markdown into rich text, press CTRL+ENTER:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt jupyter markdown" src="https://assets.digitalocean.com/articles/jupyter_notebook/markdown_results.png"&gt;&lt;/p&gt;
+&lt;p&gt;You can use the markdown cells to make notes and document your code. Let's implement that simple equation and print the result. Select Insert &amp;gt; Insert Cell Below to insert and cell and enter the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="Alt jupyter run code" src="https://assets.digitalocean.com/articles/jupyter_notebook/equations_results.png"&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="tensorflow"></category><category term="keras"></category><category term="neural network"></category><category term="Acer C720"></category></entry><entry><title>Machine learning on a Chromebook</title><link href="https://germanrezzonico.github.io/environment-chromebook.html" rel="alternate"></link><published>2017-04-07T22:00:00-03:00</published><updated>2017-04-07T22:00:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-07:/environment-chromebook.html</id><summary type="html">&lt;p&gt;Setting up a machine learning environment on Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Machine learning on a Chromebook&lt;/h1&gt;
 &lt;h2&gt;Requirements&lt;/h2&gt;
-&lt;p&gt;To set up a machine learning environment &lt;strong&gt;Python 2.7.6&lt;/strong&gt; was used on Chromebook Acer C720 with Ubuntu 14.04.5 LTS installed via &lt;a href="https://github.com/dnschneid/crouton"&gt;crouton&lt;/a&gt;. The following Python libraries are required:&lt;/p&gt;
+&lt;p&gt;To set up a machine learning environment with &lt;strong&gt;Python 2.7.6&lt;/strong&gt; on a Chromebook Acer C720 with Ubuntu 14.04.5 LTS installed via &lt;a href="https://github.com/dnschneid/crouton"&gt;crouton&lt;/a&gt;. The following Python libraries are required:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.numpy.org/"&gt;NumPy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.scipy.org/"&gt;SciPy&lt;/a&gt;&lt;/li&gt;
@@ -52,10 +251,16 @@ Request that the security policy set the HOME environment variable to the home d
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Other packages&lt;/h3&gt;
+&lt;h3&gt;scipy, matplotlib, pandas and others&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f build-essential python-dev python-setuptools python-numpy python-numpy-dev python-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python-matplotlib python-pandas
+&lt;/pre&gt;&lt;/div&gt;
 
-sudo -H pip install scikit-learn seaborn
+
+&lt;h3&gt;seaborn&lt;/h3&gt;
+&lt;p&gt;Download latest version of seaborn .tar.gz&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xzf seaborn-file.tar.gz
+cd seaborn-path/
+sudo python setup.py install
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -82,7 +287,195 @@ where $x = 2$
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;&lt;img alt="Alt jupyter run code" src="https://assets.digitalocean.com/articles/jupyter_notebook/equations_results.png"&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="environment"></category><category term="Acer C720"></category></entry><entry><title>Markdown post test</title><link href="https://germanrezzonico.github.io/mardown-post.html" rel="alternate"></link><published>2017-04-04T17:14:00-03:00</published><updated>2017-04-04T17:14:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-04:/mardown-post.html</id><summary type="html">&lt;p&gt;This is post is written using markdown.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This post is written in Markdown&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="Alt jupyter run code" src="https://assets.digitalocean.com/articles/jupyter_notebook/equations_results.png"&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="environment"></category><category term="Acer C720"></category></entry><entry><title>Programming environment on a Chromebook</title><link href="https://germanrezzonico.github.io/programming-env-chromebook.html" rel="alternate"></link><published>2017-04-06T22:00:00-03:00</published><updated>2017-04-06T22:00:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-06:/programming-env-chromebook.html</id><summary type="html">&lt;p&gt;Setttip up a developing environment on a Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
+&lt;h2&gt;Installing extra applications not included in crouton&lt;/h2&gt;
+&lt;h3&gt;dev essentials&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y gedit build-essential g++ zip nano
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;other applications&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y ubuntu-restricted-extras ttf-ubuntu-font-family software-center synaptic openjdk-7-jre gtk2-engines-pixbuf
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;nodejs and npm (node package manager)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y nodejs
+sudo apt-get install -f -y npm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;a href="http://jshint.com/"&gt;jshint&lt;/a&gt; to allow checking of JS code within emacs&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install -g jshint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;screen&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y screen
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;a href="http://nodejs.org/api/repl.html#repl_repl"&gt;rlwrap&lt;/a&gt; to provide libreadline features with node&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y rlwrap
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;a href="https://launchpad.net/~cassou/+archive/emacs"&gt;emacs24&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository -y ppa:cassou/emacs
+sudo apt-get -qq update
+sudo apt-get install -f -y emacs24-nox emacs24-el emacs24-common-non-dfsg
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;a href="https://toolbelt.heroku.com/debian"&gt;Heroku toolbelt&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh &lt;span class="p"&gt;|&lt;/span&gt; sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;To add ssh keys to heroku&lt;/h4&gt;
+&lt;p&gt;heroku login&lt;/p&gt;
+&lt;h4&gt;ssh-keygen -t rsa&lt;/h4&gt;
+&lt;p&gt;heroku keys:add&lt;/p&gt;
+&lt;h3&gt;sublime text 3&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install -f -y sublime-text-installer
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Visual Studio Code&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget https://code.visualstudio.com/docs/?dv&lt;span class="o"&gt;=&lt;/span&gt;linux64_deb
+sudo dpkg -i code_1.10.2-1488981323_amd64.deb
+sudo apt-get -f -y install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;To remove&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dpkg -r PACKAGE_NAME
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;To make de dafault text editor&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sed -i &lt;span class="s1"&gt;&amp;#39;s/gedit.desktop/sublime\-text\.desktop/g&amp;#39;&lt;/span&gt; /usr/share/applications/defaults.list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Libre Office&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y libreoffice
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Complete the installation by including the Ubuntu (GNOME) desktop integration:&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y libreoffice-gnome
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;/h3&gt;
+&lt;h3&gt;Android Studio&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;http://tamingandroidcode.blogspot.com.ar/2013/12/running-android-studio-on-chromebook.html
+http://tomwwolf.com/2013/11/20/howto-android-development-on-chromebook/
+https://sendgrid.com/blog/develop-native-android-apps-chromebook/
+http://tomwwolf.com/chromebook-14-compedium/ubuntu-cookbook/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;JAVA JDK 7&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget http://download.oracle.com/otn-pub/java/jdk/7u75-b13/jdk-7u75-linux-x64.tar.gz
+sudo tar -xvzf ~/jdk-7u75-linux-x64.tar.gz
+rm -f ~/jdk-7u75-linux-x64.tar.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;android studio&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y android-tools-adb android-tools-fastboot
+wget https://dl.google.com/dl/android/studio/ide-zips/1.1.0/android-studio-ide-135.1740770-linux.zip
+unzip android-studio-ide-135.1740770-linux.zip
+rm -f android-studio-ide-135.1740770-linux.zip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the user home directory, edit ‘.bashrc’ and append the following to the end of the file ‘PATH=${PATH}:~/android-studio/bin’ (or the equivalent in your install).
+Reboot to force the new PATH.&lt;/p&gt;
+&lt;p&gt;In ~/andoid-studio/bin/studio.sh right below the ‘#!/bin/sh’ line add the following: 'JAVA_HOME=~/jdk1.7.0_45'&lt;/p&gt;
+&lt;h4&gt;If neccesary install the following libraries&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f -y libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Open a terminal and enter ‘studio.sh’ to confirm that Android Studio was found and executed.&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;studio.sh
+&lt;/pre&gt;&lt;/div&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="crouton"></category><category term="Acer C720"></category></entry><entry><title>Ubuntu 14.04.5 LTS (trusty) on a Chromebook</title><link href="https://germanrezzonico.github.io/ubuntu-chromebook.html" rel="alternate"></link><published>2017-04-05T22:00:00-03:00</published><updated>2017-04-05T22:00:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-05:/ubuntu-chromebook.html</id><summary type="html">&lt;p&gt;Installing Ubuntu 14.04.5 LTS (trusty) via cruoton on Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
+&lt;p&gt;To Install Ubuntu 14.04.5 LTS (trusty) on a SD Card via &lt;a href="https://github.com/dnschneid/crouton"&gt;cruoton&lt;/a&gt; on Chromebook Acer C720-2802, follow this instructions:&lt;/p&gt;
+&lt;h2&gt;1 . enter the chromebook into the developer mode&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Beaware enter developer mode will erase all data in the chromebook&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Press and hold the Esc and Refresh keys together, then press the Power button (while still holding the other two keys). This will reboot your Chromebook into Recovery Mode.&lt;/p&gt;
+&lt;p&gt;As soon as you see Recovery Mode pop up—the screen with the yellow exclamation point—press Ctrl+D. This will bring up a prompt asking if you want to turn on Developer Mode.&lt;/p&gt;
+&lt;p&gt;Press Enter to continue, then give it some time. It'll pop up with a new screen for a few moments, then reboot and go through the process of enabling Developer Mode. This may take a little while (about 15 minutes or so), and will wipe your local information.&lt;/p&gt;
+&lt;p&gt;When it's done, it will return to the screen with the red exclamation point. Leave it alone until it reboots into Chrome OS or press Ctrl+D. Every time the chromebook restart this window will appear, if you dont press Ctrl+D it will continue but only after ~20seg or so and a few beeps.&lt;/p&gt;
+&lt;h2&gt;2 . enter the chromebook with your google credentials (you wont be erasing all the data again)&lt;/h2&gt;
+&lt;h2&gt;3. Download the latest &lt;a href="https://github.com/dnschneid/crouton"&gt;cruoton&lt;/a&gt; installer into the Downloads/ folder:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;https://goo.gl/fd3zc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;4 . press Ctrl+Alt+T this will open a shell window, while there you need to execute the crouton installer:&lt;/h2&gt;
+&lt;h3&gt;To install ubuntu (trusty), we aware it will take some time, more than 30 minutes for sure.&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sh -e ~/Downloads/crouton -u -e -k ~/Downloads -p /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card -n trusty
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;To update and encrypt (a key file will be create in your Downloads/ folder, DO NOT loose it)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sh -e ~/Downloads/crouton -u -e -k ~/Downloads -p /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card -n trusty
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;5 . Ubuntu is already install on your SD Card, to enter it:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo bash /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card/bin/enter-chroot
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card/bin
+sudo bash startunity -b
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;6 . Update only&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sh ~/Downloads/crouton -u -p /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card -n trusty
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;7 . Backup chroot, this way the next time you need to restore your chromebook install crouton from that backup will take considerable less time.&lt;/h2&gt;
+&lt;p&gt;(The backup file may have more than 5GB so run this command inside the definitive destination).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo bash /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card/bin/edit-chroot -b trusty
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;8 . To restore a backup&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo sh ~/Downloads/crouton -f mybackup.tar.gz -p /media/removable/SD&lt;span class="se"&gt;\ &lt;/span&gt;Card/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;9 . You may also need to install git to work with your repos:&lt;/h2&gt;
+&lt;h3&gt;install git&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get update
+sudo apt-get install -y git-core
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;generate ssh keys&lt;/h2&gt;
+&lt;p&gt;Modify this line with your email&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh-keygen -t rsa -C &lt;span class="s2"&gt;&amp;quot;your_name@provider.com&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;copy ssh keys to bitbucket, github, etc account via GUI&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat ~/.ssh/id_rsa.pub
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;10 . The Ubuntu installation via crouton doesnt have much on ti, if you would like to install some basic libraries:&lt;/h2&gt;
+&lt;p&gt;*Follow the instructions in this &lt;a href="programming-env-chromebook.html"&gt;post&lt;/a&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="crouton"></category><category term="Acer C720"></category></entry><entry><title>Markdown post test</title><link href="https://germanrezzonico.github.io/mardown-post.html" rel="alternate"></link><published>2017-04-04T17:14:00-03:00</published><updated>2017-04-04T17:14:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-04:/mardown-post.html</id><summary type="html">&lt;p&gt;This is post is written using markdown.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;This post is written in Markdown&lt;/h1&gt;
 &lt;h2&gt;Ordered lists&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;first item&lt;/li&gt;
