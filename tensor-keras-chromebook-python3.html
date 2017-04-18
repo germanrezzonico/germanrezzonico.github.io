@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Installing tensorflow and keras on a Chromebook</title>
+        <title>Installing tensorflow and keras on a Chromebook (python 3)</title>
 
             <link href="https://germanrezzonico.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Full Atom Feed" />
             <link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Categories Atom Feed" />
@@ -35,7 +35,7 @@
 
 
 
-        <meta name="description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802.">
+        <meta name="description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802 (python3).">
 
         <meta name="author" content="German Rezzonico">
 
@@ -46,16 +46,17 @@
         <meta name="tags" content="keras">
         <meta name="tags" content="neural network">
         <meta name="tags" content="Acer C720">
+        <meta name="tags" content="python 3">
 
 	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Machine Learning and More">
 
 	<meta property="og:type" content="article">
             <meta property="article:author" content="https://germanrezzonico.github.io/author/german-rezzonico.html">
-	<meta property="og:url" content="https://germanrezzonico.github.io/tensor-keras-chromebook.html">
-	<meta property="og:title" content="Installing tensorflow and keras on a Chromebook">
-	<meta property="article:published_time" content="2017-04-10 13:30:00-03:00">
-            <meta property="og:description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802.">
+	<meta property="og:url" content="https://germanrezzonico.github.io/tensor-keras-chromebook-python3.html">
+	<meta property="og:title" content="Installing tensorflow and keras on a Chromebook (python 3)">
+	<meta property="article:published_time" content="2017-04-17 20:30:00-03:00">
+            <meta property="og:description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802 (python3).">
 
             <meta property="og:image" content="https://germanrezzonico.github.io//images/chromebook.jpg">
 </head>
@@ -93,10 +94,10 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Installing tensorflow and keras on a Chromebook</h1>
+                        <h1>Installing tensorflow and keras on a Chromebook (python 3)</h1>
                         <span class="meta">Posted by
                                 <a href="https://germanrezzonico.github.io/author/german-rezzonico.html">German Rezzonico</a>
-                             on Mon 10 April 2017
+                             on Mon 17 April 2017
                         </span>
                         
                     </div>
@@ -112,59 +113,28 @@
     <!-- Post Content -->
     <article>
         <h1>Instructions</h1>
-<h2>Install python 2.7, python-pip and python-dev</h2>
-<p>Installing python2.7 will update to the latest version of Python 2.7, and python-pip will install Pip which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.</p>
-<div class="highlight"><pre><span></span>sudo apt-get install -f python2.7 python-pip python-dev
+<h2>Install python 3, python3-pip and python3-dev</h2>
+<p>Installing python3 will update to the latest version of Python 3, and python3-pip will install Pip3 which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.</p>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python3 python3-pip python3-dev
 </pre></div>
 
 
 <h2>To verify that you have python and pip installed:</h2>
-<div class="highlight"><pre><span></span>python --version
-pip --version
-</pre></div>
-
-
-<h2>Installing Ipython</h2>
-<div class="highlight"><pre><span></span>sudo apt-get install -f ipython ipython-notebook
-</pre></div>
-
-
-<h2>Installing Jupyter Notebook</h2>
-<p>-H, --set-home
-Request that the security policy set the HOME environment variable to the home directory specified by the target user's password database entry. Depending on the policy, this may be the default behavior.</p>
-<div class="highlight"><pre><span></span>sudo -H pip install jupyter
-</pre></div>
-
-
-<h3>If any error --&gt; Upgrade pip to the latest version</h3>
-<div class="highlight"><pre><span></span>sudo -H pip install --upgrade pip
-</pre></div>
-
-
-<h3>Try installing Jupyter again</h3>
-<div class="highlight"><pre><span></span>sudo -H pip install jupyter
-</pre></div>
-
-
-<h2>Running Jupyter Notebook</h2>
-<div class="highlight"><pre><span></span>jupyter notebook
+<div class="highlight"><pre><span></span>python3 --version
+pip3 --version
 </pre></div>
 
 
 <h2>Install packages</h2>
-<div class="highlight"><pre><span></span>sudo apt-get install -f python-numpy python-pandas python-matplotlib
+<div class="highlight"><pre><span></span>sudo apt-get install -f build-essential python3-dev python3-setuptools python3-numpy python3-numpy-dev python3-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python3-matplotlib python3-pandas
 
-sudo apt-get install -f build-essential python-dev python-setuptools python-numpy python-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python-matplotlib
-
-sudo apt-get install -f python-numpy-dev g++
-
-sudo -H pip install scikit-learn
+sudo -H pip3 install scikit-learn
 </pre></div>
 
 
 <p>To upgrade:</p>
-<div class="highlight"><pre><span></span>sudo -H pip install --upgrade pandas
-sudo -H pip install matplotlib --upgrade
+<div class="highlight"><pre><span></span>sudo -H pip3 install --upgrade pandas
+sudo -H pip3 install matplotlib --upgrade
 </pre></div>
 
 
@@ -172,14 +142,7 @@ sudo -H pip install matplotlib --upgrade
 <p>Download latest version of seaborn .tar.gz</p>
 <div class="highlight"><pre><span></span>tar -xzf seaborn-file.tar.gz
 cd seaborn-path/
-sudo python setup.py install
-</pre></div>
-
-
-<h3>Install matplotlib Toolkits</h3>
-<p>http://matplotlib.org/1.4.3/mpl_toolkits/index.html</p>
-<p>https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/</p>
-<div class="highlight"><pre><span></span>sudo apt-get install -f python-mpltoolkits.basemap
+sudo python3 setup.py install
 </pre></div>
 
 
@@ -193,19 +156,22 @@ python setup.py develop --user
 <h3>Install tensorflow with virtualenv</h3>
 <p>https://www.tensorflow.org/install/install_linux</p>
 <div class="highlight"><pre><span></span>sudo apt-get install -f python-pip python-dev python-virtualenv
-virtualenv --system-site-packages tensorflow # target diectory
-source ~/tensorflow/bin/activate # (tensorflow)$
-pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl # pip version lower than 8.1 Python 2.7  and cpu only
+# target diectory
+virtualenv --system-site-packages tensorflow3
+# (tensorflow3)$
+source ~/tensorflow3/bin/activate
+# pip version lower than 8.1 Python 2.7  and cpu only
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp34-cp34m-linux_x86_64.whl
 </pre></div>
 
 
 <h4>Activate the virtualenv environment each time you use TensorFlow</h4>
-<div class="highlight"><pre><span></span>source ~/tensorflow/bin/activate
+<div class="highlight"><pre><span></span>source ~/tensorflow3/bin/activate
 </pre></div>
 
 
 <p>You shoul get something like this:
-(tensorflow)$</p>
+(tensorflow3)$</p>
 <p>To deactivate:</p>
 <div class="highlight"><pre><span></span>deactivate
 </pre></div>
@@ -229,16 +195,12 @@ pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensor
 
 
 <h3>Install pydot and graphviz (for NN graph)</h3>
-<div class="highlight"><pre><span></span>sudo apt-get install -f python-pydot
-sudo -H pip install pydot-ng
-sudo -H pip install pydot --upgrade
-
-sudo apt-get install -f graphviz
+<div class="highlight"><pre><span></span>sudo -H pip3 install pydot pydot-ng graphviz
 </pre></div>
 
 
 <h3>Install plotly (for EDA)</h3>
-<div class="highlight"><pre><span></span>sudo -h pip install plotly
+<div class="highlight"><pre><span></span>sudo -H pip3 install plotly
 </pre></div>
 
 
@@ -251,9 +213,8 @@ sudo apt-get install -f graphviz
 <li>HDF5 and h5py (optional, required if you use model saving/loading functions)</li>
 <li>Optional but recommended if you use CNNs: cuDNN.</li>
 </ul>
-<div class="highlight"><pre><span></span>sudo apt-get install -f python-yaml
-sudo apt-get install -f libhdf5-dev
-sudo apt-get install -f python-h5py
+<div class="highlight"><pre><span></span>sudo apt-get install -f python3-yaml
+sudo apt-get install -f python3-h5py
 </pre></div>
 
 
@@ -262,11 +223,43 @@ sudo apt-get install -f python-h5py
 </pre></div>
 
 
-<h4>Using a virtualenv in an IPython notebook (install kernels)</h4>
+<h3>If any error --&gt; Upgrade pip to the latest version</h3>
+<div class="highlight"><pre><span></span>sudo -H pip3 install --upgrade pip
+</pre></div>
+
+
+<h2>Installing Ipython</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install -f ipython ipython-notebook
+</pre></div>
+
+
+<h2>Installing Jupyter Notebook</h2>
+<p>-H, --set-home
+Request that the security policy set the HOME environment variable to the home directory specified by the target user's password database entry. Depending on the policy, this may be the default behavior.</p>
+<div class="highlight"><pre><span></span>sudo -H pip3 install jupyter
+</pre></div>
+
+
+<h3>If any error --&gt; Upgrade pip to the latest version</h3>
+<div class="highlight"><pre><span></span>sudo -H pip3 install --upgrade pip
+</pre></div>
+
+
+<h3>Try installing Jupyter again</h3>
+<div class="highlight"><pre><span></span>sudo -H pip3 install jupyter
+</pre></div>
+
+
+<h2>Running Jupyter Notebook</h2>
+<div class="highlight"><pre><span></span>jupyter notebook
+</pre></div>
+
+
+<h3>Using a virtualenv in an IPython notebook (install kernels)</h3>
 <p>https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/</p>
-<div class="highlight"><pre><span></span>source ~/tensorflow/bin/activate
-python2 -m ipykernel install --user
-python -m ipykernel install --user --name tensorflow --display-name &quot;Python tensorflow&quot;
+<div class="highlight"><pre><span></span>source ~/tensorflow3/bin/activate
+python3 -m ipykernel install --user
+python -m ipykernel install --user --name tensorflow3 --display-name &quot;Python 3 (tensorflow)&quot;
 </pre></div>
 
 
@@ -297,7 +290,7 @@ where $x = 2$
     </article>
 
         <div class="tags">
-            <p>tags: <a href="https://germanrezzonico.github.io/tag/python.html">python</a>, <a href="https://germanrezzonico.github.io/tag/chromebook.html">chromebook</a>, <a href="https://germanrezzonico.github.io/tag/ubuntu.html">ubuntu</a>, <a href="https://germanrezzonico.github.io/tag/tensorflow.html">tensorflow</a>, <a href="https://germanrezzonico.github.io/tag/keras.html">keras</a>, <a href="https://germanrezzonico.github.io/tag/neural-network.html">neural network</a>, <a href="https://germanrezzonico.github.io/tag/acer-c720.html">Acer C720</a></p>
+            <p>tags: <a href="https://germanrezzonico.github.io/tag/python.html">python</a>, <a href="https://germanrezzonico.github.io/tag/chromebook.html">chromebook</a>, <a href="https://germanrezzonico.github.io/tag/ubuntu.html">ubuntu</a>, <a href="https://germanrezzonico.github.io/tag/tensorflow.html">tensorflow</a>, <a href="https://germanrezzonico.github.io/tag/keras.html">keras</a>, <a href="https://germanrezzonico.github.io/tag/neural-network.html">neural network</a>, <a href="https://germanrezzonico.github.io/tag/acer-c720.html">Acer C720</a>, <a href="https://germanrezzonico.github.io/tag/python-3.html">python 3</a></p>
         </div>
 
     <hr>

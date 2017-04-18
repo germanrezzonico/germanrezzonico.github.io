@@ -1,5 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Machine Learning and More - posts</title><link href="https://germanrezzonico.github.io/" rel="alternate"></link><link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://germanrezzonico.github.io/</id><updated>2017-04-10T13:30:00-03:00</updated><entry><title>Installing tensorflow and keras on a Chromebook</title><link href="https://germanrezzonico.github.io/tensor-keras-chromebook.html" rel="alternate"></link><published>2017-04-10T13:30:00-03:00</published><updated>2017-04-10T13:30:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-10:/tensor-keras-chromebook.html</id><summary type="html">&lt;p&gt;Installing tensorflow and keras on a Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Machine Learning and More - posts</title><link href="https://germanrezzonico.github.io/" rel="alternate"></link><link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://germanrezzonico.github.io/</id><updated>2017-04-17T20:30:00-03:00</updated><entry><title>Installing tensorflow and keras on a Chromebook (python 3)</title><link href="https://germanrezzonico.github.io/tensor-keras-chromebook-python3.html" rel="alternate"></link><published>2017-04-17T20:30:00-03:00</published><updated>2017-04-17T20:30:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-17:/tensor-keras-chromebook-python3.html</id><summary type="html">&lt;p&gt;Installing tensorflow and keras on a Chromebook Acer C720-2802 (python3).&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
+&lt;h2&gt;Install python 3, python3-pip and python3-dev&lt;/h2&gt;
+&lt;p&gt;Installing python3 will update to the latest version of Python 3, and python3-pip will install Pip3 which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python3 python3-pip python3-dev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;To verify that you have python and pip installed:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 --version
+pip3 --version
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Install packages&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f build-essential python3-dev python3-setuptools python3-numpy python3-numpy-dev python3-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python3-matplotlib python3-pandas
+
+sudo -H pip3 install scikit-learn
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To upgrade:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install --upgrade pandas
+sudo -H pip3 install matplotlib --upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install seaborn&lt;/h3&gt;
+&lt;p&gt;Download latest version of seaborn .tar.gz&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xzf seaborn-file.tar.gz
+cd seaborn-path/
+sudo python3 setup.py install
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install &lt;a href="https://xgboost.readthedocs.io/en/latest/build.html"&gt;xgboost&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/dmlc/xgboost
+&lt;span class="nb"&gt;cd&lt;/span&gt; xgboost&lt;span class="p"&gt;;&lt;/span&gt; cp make/config.mk ./config.mk&lt;span class="p"&gt;;&lt;/span&gt; make -j4
+python setup.py develop --user
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install tensorflow with virtualenv&lt;/h3&gt;
+&lt;p&gt;https://www.tensorflow.org/install/install_linux&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python-pip python-dev python-virtualenv
+# target diectory
+virtualenv --system-site-packages tensorflow3
+# (tensorflow3)$
+source ~/tensorflow3/bin/activate
+# pip version lower than 8.1 Python 2.7  and cpu only
+sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp34-cp34m-linux_x86_64.whl
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Activate the virtualenv environment each time you use TensorFlow&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source ~/tensorflow3/bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You shoul get something like this:
+(tensorflow3)$&lt;/p&gt;
+&lt;p&gt;To deactivate:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;deactivate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Validate your tensorflow installation&lt;/h4&gt;
+&lt;p&gt;Active your container&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;tensorflow&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;tf&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;hello&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;constant&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Hello, TensorFlow!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;sess&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tf&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Session&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sess&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Hello&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TensorFlow&lt;/span&gt;&lt;span class="err"&gt;!&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Uninstalling TensorFlow&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm -r targetDirectory
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install pydot and graphviz (for NN graph)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install pydot pydot-ng graphviz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install plotly (for EDA)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install plotly
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install keras&lt;/h3&gt;
+&lt;p&gt;https://keras.io/#installation&lt;/p&gt;
+&lt;h4&gt;Required dependencies&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;numpy, scipy&lt;/li&gt;
+&lt;li&gt;yaml&lt;/li&gt;
+&lt;li&gt;HDF5 and h5py (optional, required if you use model saving/loading functions)&lt;/li&gt;
+&lt;li&gt;Optional but recommended if you use CNNs: cuDNN.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python3-yaml
+sudo apt-get install -f python3-h5py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Install keras&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip install keras
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;If any error --&amp;gt; Upgrade pip to the latest version&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Installing Ipython&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f ipython ipython-notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Installing Jupyter Notebook&lt;/h2&gt;
+&lt;p&gt;-H, --set-home
+Request that the security policy set the HOME environment variable to the home directory specified by the target user's password database entry. Depending on the policy, this may be the default behavior.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install jupyter
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;If any error --&amp;gt; Upgrade pip to the latest version&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Try installing Jupyter again&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo -H pip3 install jupyter
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Running Jupyter Notebook&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;jupyter notebook
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Using a virtualenv in an IPython notebook (install kernels)&lt;/h3&gt;
+&lt;p&gt;https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;source ~/tensorflow3/bin/activate
+python3 -m ipykernel install --user
+python -m ipykernel install --user --name tensorflow3 --display-name &amp;quot;Python 3 (tensorflow)&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Using Jupyter Notebook&lt;/h2&gt;
+&lt;p&gt;Automatically, Jupyter Notebook will show all of the files and folders in the directory it is run from.&lt;/p&gt;
+&lt;p&gt;To create a new notebook file, select New &amp;gt; Python 2 from the top right pull-down menu.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt jupyter new file" src="https://assets.digitalocean.com/articles/jupyter_notebook/create_python2_notebook.png"&gt;&lt;/p&gt;
+&lt;p&gt;This will open a notebook. We can now run Python code in the cell or change the cell to markdown. For example, change the first cell to accept Markdown by clicking Cell &amp;gt; Cell Type &amp;gt; Markdown from the top navigation bar. We can now write notes using Markdown and even include equations written in LaTeX by putting them between the $$ symbols. For example, type the following into the cell after changing it to markdown:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Simple Equation
+
+Let us now implement the following equation:
+$$ y = x^2$$
+
+where $x = 2$
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To turn the markdown into rich text, press CTRL+ENTER:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt jupyter markdown" src="https://assets.digitalocean.com/articles/jupyter_notebook/markdown_results.png"&gt;&lt;/p&gt;
+&lt;p&gt;You can use the markdown cells to make notes and document your code. Let's implement that simple equation and print the result. Select Insert &amp;gt; Insert Cell Below to insert and cell and enter the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="Alt jupyter run code" src="https://assets.digitalocean.com/articles/jupyter_notebook/equations_results.png"&gt;&lt;/p&gt;</content><category term="python"></category><category term="chromebook"></category><category term="ubuntu"></category><category term="tensorflow"></category><category term="keras"></category><category term="neural network"></category><category term="Acer C720"></category><category term="python 3"></category></entry><entry><title>Installing tensorflow and keras on a Chromebook</title><link href="https://germanrezzonico.github.io/tensor-keras-chromebook.html" rel="alternate"></link><published>2017-04-10T13:30:00-03:00</published><updated>2017-04-10T13:30:00-03:00</updated><author><name>German Rezzonico</name></author><id>tag:germanrezzonico.github.io,2017-04-10:/tensor-keras-chromebook.html</id><summary type="html">&lt;p&gt;Installing tensorflow and keras on a Chromebook Acer C720-2802.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Instructions&lt;/h1&gt;
 &lt;h2&gt;Install python 2.7, python-pip and python-dev&lt;/h2&gt;
 &lt;p&gt;Installing python2.7 will update to the latest version of Python 2.7, and python-pip will install Pip which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install -f python2.7 python-pip python-dev
@@ -60,7 +234,7 @@ sudo -H pip install matplotlib --upgrade
 &lt;p&gt;Download latest version of seaborn .tar.gz&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;tar -xzf seaborn-file.tar.gz
 cd seaborn-path/
-sudo python setup.py install)
+sudo python setup.py install
 &lt;/pre&gt;&lt;/div&gt;
 
 
