@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Tensorflow GPU and keras on Ubuntu with Nvidia 960M</title>
+
+            <link href="https://germanrezzonico.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Full Atom Feed" />
+            <link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Categories Atom Feed" />
+        <!-- Bootstrap Core CSS -->
+        <link href="https://germanrezzonico.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="https://germanrezzonico.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="https://germanrezzonico.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Setting up a tensorflow gpu environment on Ubuntu 16.04.2 LTS with Nvidia 960M">
+
+        <meta name="author" content="German Rezzonico">
+
+        <meta name="tags" content="python">
+        <meta name="tags" content="ubuntu">
+        <meta name="tags" content="environment">
+        <meta name="tags" content="nvidia 960m">
+        <meta name="tags" content="tensorflow gpu">
+        <meta name="tags" content="keras">
+        <meta name="tags" content="conda">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Machine Learning and More">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="https://germanrezzonico.github.io/author/german-rezzonico.html">
+	<meta property="og:url" content="https://germanrezzonico.github.io/environment-ubuntu-nvidia960m.html">
+	<meta property="og:title" content="Tensorflow GPU and keras on Ubuntu with Nvidia 960M">
+	<meta property="article:published_time" content="2017-04-23 19:00:00-03:00">
+            <meta property="og:description" content="Setting up a tensorflow gpu environment on Ubuntu 16.04.2 LTS with Nvidia 960M">
+
+            <meta property="og:image" content="https://germanrezzonico.github.io//images/nvidia960m.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://germanrezzonico.github.io/">Machine Learning and More</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/images/nvidia960m.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Tensorflow GPU and keras on Ubuntu with Nvidia 960M</h1>
+                        <span class="meta">Posted by
+                                <a href="https://germanrezzonico.github.io/author/german-rezzonico.html">German Rezzonico</a>
+                             on Sun 23 April 2017
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <h1>Tensorflow GPU and Keras on Ubuntu 16.04.2 LTS with Nvidia 960M</h1>
+<h2>Requirements</h2>
+<p>We will set up a machine learning development environment on Ubuntu 16.04.2 LTS and TensorFlow with GPU support. The installation was done at a laptop with a Geforce GTX 960M graphics card, the laptop also has an integrated GPU. </p>
+<h2>Instructions:</h2>
+<p>We will follow some instructions found at:
+http://berge.io/deep-blog/2016/9/7/how-to-install-tensorflow-with-gpu-support-on-a-machine-with-ubuntuv</p>
+<h3>MiniConda installation</h3>
+<p>Download the bash installer for miniconda <a href="https://conda.io/miniconda.html">here</a></p>
+<p>Exceute the miniconda bash installer:</p>
+<div class="highlight"><pre><span></span>bash Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+
+
+<p>Then we will create an environment in which we will install the necessary libraries:</p>
+<div class="highlight"><pre><span></span>conda create --name environment_name <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5
+</pre></div>
+
+
+<p>Enter the environment:</p>
+<div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
+</pre></div>
+
+
+<p>Inside the enviroment:</p>
+<div class="highlight"><pre><span></span>conda install numpy jupyter scipy matplotlib pandas seaborn
+</pre></div>
+
+
+<p>To exit the environment:</p>
+<div class="highlight"><pre><span></span><span class="nb">source</span> deactivate
+</pre></div>
+
+
+<h3>Driver installation</h3>
+<p>Open Software &amp; Updates, Additional Drivers and install the corresponding drivers to your hardware.</p>
+<h3>Cuda installation</h3>
+<p>Download the Cuda Toolkit, in this case we will install CUDA Toolkit 8.0
+https://developer.nvidia.com/cuda-downloads</p>
+<p>Follow <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/#axzz4f7BvqguO">this instructions</a>
+<strong>Make sure to follow ALL the steps!</strong></p>
+<p>As a recap, this is what you will be doing:</p>
+<div class="highlight"><pre><span></span>sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+</pre></div>
+
+
+<p>On the Post installation actions of the guide, be sure to check the path where cuda is installed and export that path.</p>
+<h3>cuDNN installation</h3>
+<p>Cudnn can be downloaded here:
+https://developer.nvidia.com/cudnn
+You need a login to get the cudnn drivers.</p>
+<p>We will install cuDNN v5.1 (Jan 20, 2017) because this version is supported by tensorflow (cuDNN v6.0 is not at this point), download: CUDA 8.0 cuDNN v5.1 Library for Linux.</p>
+<p>Once you have downloaded cuDNN execute the following commands as stated <a href="https://alliseesolutions.wordpress.com/2016/09/08/install-gpu-tensorflow-from-sources-w-ubuntu-16-04-and-cuda-8-0-rc/">here</a>: </p>
+<div class="highlight"><pre><span></span>tar -xzvf cudnn-8.0-linux-x64-v5.1.tgz
+sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+</pre></div>
+
+
+<h3>Tensorflow installation</h3>
+<div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
+conda install pip
+pip install --ignore-installed --upgrade tensorflow-gpu
+</pre></div>
+
+
+<h3>Environment variables</h3>
+<p>http://blog.mrtanke.com/2016/10/25/Install-and-Configure-GPU-enabled-TensorFlow-using-Anaconda/
+We need to set the LD_LIBRARY_PATH (if you follow the instructions from nvidia cuda toolkit installation guide this should be already set) and CUDA_HOME environment variables. So I add the following commands to the end of ~/.bashrc</p>
+<div class="highlight"><pre><span></span><span class="c1"># Path to Cuda toolkit</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-8.0/bin<span class="si">${</span><span class="nv">PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}}</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-8.0/lib64<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}}</span>
+<span class="c1"># Path to cudnn</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;</span>
+<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda
+</pre></div>
+
+
+<h3>Congrats, now you should test the installation</h3>
+<div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
+python <span class="m">3</span>
+import tensorslow
+</pre></div>
+
+
+<p>It shows:</p>
+<div class="highlight"><pre><span></span>I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcublas.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcufft.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcurand.so.8.0 locally
+</pre></div>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="https://germanrezzonico.github.io/tag/python.html">python</a>, <a href="https://germanrezzonico.github.io/tag/ubuntu.html">ubuntu</a>, <a href="https://germanrezzonico.github.io/tag/environment.html">environment</a>, <a href="https://germanrezzonico.github.io/tag/nvidia-960m.html">nvidia 960m</a>, <a href="https://germanrezzonico.github.io/tag/tensorflow-gpu.html">tensorflow gpu</a>, <a href="https://germanrezzonico.github.io/tag/keras.html">keras</a>, <a href="https://germanrezzonico.github.io/tag/conda.html">conda</a></p>
+        </div>
+
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://www.linkedin.com/in/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:germanrezzonico@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://germanrezzonico.github.io/theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://germanrezzonico.github.io/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="https://germanrezzonico.github.io/theme/js/clean-blog.min.js"></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-96990928-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+
+</html>

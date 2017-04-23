@@ -1090,9 +1090,10 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Machine-Learning-Engineer-Nanodegree">Machine Learning Engineer Nanodegree<a class="anchor-link" href="#Machine-Learning-Engineer-Nanodegree">¶</a></h1><h2 id="Reinforcement-Learning">Reinforcement Learning<a class="anchor-link" href="#Reinforcement-Learning">¶</a></h2><h2 id="Project:-Train-a-Smartcab-to-Drive">Project: Train a Smartcab to Drive<a class="anchor-link" href="#Project:-Train-a-Smartcab-to-Drive">¶</a></h2><p>Welcome to the fourth project of the Machine Learning Engineer Nanodegree! In this notebook, template code has already been provided for you to aid in your analysis of the <em>Smartcab</em> and your implemented learning algorithm. You will not need to modify the included code beyond what is requested. There will be questions that you must answer which relate to the project and the visualizations provided in the notebook. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide in <code>agent.py</code>.</p>
+<h1 id="Machine-Learning-Engineer-Nanodegree">Machine Learning Engineer Nanodegree<a class="anchor-link" href="#Machine-Learning-Engineer-Nanodegree">&#182;</a></h1><h2 id="Reinforcement-Learning">Reinforcement Learning<a class="anchor-link" href="#Reinforcement-Learning">&#182;</a></h2><h2 id="Project:-Train-a-Smartcab-to-Drive">Project: Train a Smartcab to Drive<a class="anchor-link" href="#Project:-Train-a-Smartcab-to-Drive">&#182;</a></h2><p>Welcome to the fourth project of the Machine Learning Engineer Nanodegree! In this notebook, template code has already been provided for you to aid in your analysis of the <em>Smartcab</em> and your implemented learning algorithm. You will not need to modify the included code beyond what is requested. There will be questions that you must answer which relate to the project and the visualizations provided in the notebook. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide in <code>agent.py</code>.</p>
 <blockquote><p><strong>Note:</strong> Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut. In addition, Markdown cells can be edited by typically double-clicking the cell to enter edit mode.</p>
 </blockquote>
+
 </div>
 </div>
 </div>
@@ -1102,7 +1103,7 @@ h6:hover .anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">¶</a></h2><p>In this project, you will work towards constructing an optimized Q-Learning driving agent that will navigate a <em>Smartcab</em> through its environment towards a goal. Since the <em>Smartcab</em> is expected to drive passengers from one location to another, the driving agent will be evaluated on two very important metrics: <strong>Safety</strong> and <strong>Reliability</strong>. A driving agent that gets the <em>Smartcab</em> to its destination while running red lights or narrowly avoiding accidents would be considered <strong>unsafe</strong>. Similarly, a driving agent that frequently fails to reach the destination in time would be considered <strong>unreliable</strong>. Maximizing the driving agent's <strong>safety</strong> and <strong>reliability</strong> would ensure that <em>Smartcabs</em> have a permanent place in the transportation industry.</p>
+<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started">&#182;</a></h2><p>In this project, you will work towards constructing an optimized Q-Learning driving agent that will navigate a <em>Smartcab</em> through its environment towards a goal. Since the <em>Smartcab</em> is expected to drive passengers from one location to another, the driving agent will be evaluated on two very important metrics: <strong>Safety</strong> and <strong>Reliability</strong>. A driving agent that gets the <em>Smartcab</em> to its destination while running red lights or narrowly avoiding accidents would be considered <strong>unsafe</strong>. Similarly, a driving agent that frequently fails to reach the destination in time would be considered <strong>unreliable</strong>. Maximizing the driving agent's <strong>safety</strong> and <strong>reliability</strong> would ensure that <em>Smartcabs</em> have a permanent place in the transportation industry.</p>
 <p><strong>Safety</strong> and <strong>Reliability</strong> are measured using a letter-grade system as follows:</p>
 <table>
 <thead><tr>
@@ -1145,21 +1146,34 @@ h6:hover .anchor-link {
 </tbody>
 </table>
 <p>To assist evaluating these important metrics, you will need to load visualization code that will be used later on in the project. Run the code cell below to import this code which is required for your analysis.</p>
-</hr></div>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import the visualization code</span>
 <span class="kn">import</span> <span class="nn">visuals</span> <span class="kn">as</span> <span class="nn">vs</span>
 
 <span class="c1"># Pretty display for notebooks</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
+
 </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Understand-the-World">Understand the World<a class="anchor-link" href="#Understand-the-World">&#182;</a></h3><p>Before starting to work on implementing your driving agent, it's necessary to first understand the world (environment) which the <em>Smartcab</em> and driving agent work in. One of the major components to building a self-learning agent is understanding the characteristics about the agent, which includes how the agent operates. To begin, simply run the <code>agent.py</code> agent code exactly how it is -- no need to make any additions whatsoever. Let the resulting simulation run for some time to see the various working components. Note that in the visual simulation (if enabled), the <strong>white vehicle</strong> is the <em>Smartcab</em>.</p>
+
 </div>
 </div>
 </div>
@@ -1168,24 +1182,16 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Understand-the-World">Understand the World<a class="anchor-link" href="#Understand-the-World">¶</a></h3><p>Before starting to work on implementing your driving agent, it's necessary to first understand the world (environment) which the <em>Smartcab</em> and driving agent work in. One of the major components to building a self-learning agent is understanding the characteristics about the agent, which includes how the agent operates. To begin, simply run the <code>agent.py</code> agent code exactly how it is -- no need to make any additions whatsoever. Let the resulting simulation run for some time to see the various working components. Note that in the visual simulation (if enabled), the <strong>white vehicle</strong> is the <em>Smartcab</em>.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">¶</a></h3><p>In a few sentences, describe what you observe during the simulation when running the default <code>agent.py</code> agent code. Some things you could consider:</p>
+<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h3><p>In a few sentences, describe what you observe during the simulation when running the default <code>agent.py</code> agent code. Some things you could consider:</p>
 <ul>
 <li><em>Does the Smartcab move at all during the simulation?</em></li>
 <li><em>What kind of rewards is the driving agent receiving?</em></li>
-<li><em>How does the light changing color affect the rewards?</em> </li>
+<li><em>How does the light changing color affect the rewards?</em>  </li>
 </ul>
 <p><strong>Hint:</strong> From the <code>/smartcab/</code> top-level directory (where this notebook is located), run the command</p>
-<div class="highlight"><pre><span></span><span class="s1">'python smartcab/agent.py'</span>
+<div class="highlight"><pre><span></span><span class="s1">&#39;python smartcab/agent.py&#39;</span>
 </pre></div>
+
 </div>
 </div>
 </div>
@@ -1205,6 +1211,7 @@ h6:hover .anchor-link {
 <li><p>Answer above</p>
 </li>
 </ol>
+
 </div>
 </div>
 </div>
@@ -1213,7 +1220,8 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Understand-the-Code">Understand the Code<a class="anchor-link" href="#Understand-the-Code">¶</a></h3><p>In addition to understanding the world, it is also necessary to understand the code itself that governs how the world, simulation, and so on operate. Attempting to create a driving agent would be difficult without having at least explored the <em>"hidden"</em> devices that make everything work. In the <code>/smartcab/</code> top-level directory, there are two folders: <code>/logs/</code> (which will be used later) and <code>/smartcab/</code>. Open the <code>/smartcab/</code> folder and explore each Python file included, then answer the following question.</p>
+<h3 id="Understand-the-Code">Understand the Code<a class="anchor-link" href="#Understand-the-Code">&#182;</a></h3><p>In addition to understanding the world, it is also necessary to understand the code itself that governs how the world, simulation, and so on operate. Attempting to create a driving agent would be difficult without having at least explored the <em>"hidden"</em> devices that make everything work. In the <code>/smartcab/</code> top-level directory, there are two folders: <code>/logs/</code> (which will be used later) and <code>/smartcab/</code>. Open the <code>/smartcab/</code> folder and explore each Python file included, then answer the following question.</p>
+
 </div>
 </div>
 </div>
@@ -1222,12 +1230,13 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">¶</a></h3><ul>
+<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h3><ul>
 <li><em>In the </em><code>agent.py</code><em> Python file, choose three flags that can be set and explain how they change the simulation.</em></li>
 <li><em>In the </em><code>environment.py</code><em> Python file, what Environment class function is called when an agent performs an action?</em></li>
 <li><em>In the </em><code>simulator.py</code><em> Python file, what is the difference between the </em><code>'render_text()'</code><em> function and the </em><code>'render()'</code><em> function?</em></li>
 <li><em>In the </em><code>planner.py</code><em> Python file, will the </em><code>'next_waypoint()</code><em> function consider the North-South or East-West direction first?</em></li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -1261,6 +1270,7 @@ h6:hover .anchor-link {
 <li><p>planner.py: Yes. The 'next_waypoint() function will check first if the destination is at the current location,  then will check if destination is cardinally East or West of location and finally if destination is cardinally North or South of location.</p>
 </li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -1270,8 +1280,9 @@ h6:hover .anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Implement-a-Basic-Driving-Agent">Implement a Basic Driving Agent<a class="anchor-link" href="#Implement-a-Basic-Driving-Agent">¶</a></h2><p>The first step to creating an optimized Q-Learning driving agent is getting the agent to actually take valid actions. In this case, a valid action is one of <code>None</code>, (do nothing) <code>'Left'</code> (turn left), <code>'Right'</code> (turn right), or <code>'Forward'</code> (go forward). For your first implementation, navigate to the <code>'choose_action()'</code> agent function and make the driving agent randomly choose one of these actions. Note that you have access to several class variables that will help you write this functionality, such as <code>'self.learning'</code> and <code>'self.valid_actions'</code>. Once implemented, run the agent file and simulation briefly to confirm that your driving agent is taking a random action each time step.</p>
-</hr></div>
+<h2 id="Implement-a-Basic-Driving-Agent">Implement a Basic Driving Agent<a class="anchor-link" href="#Implement-a-Basic-Driving-Agent">&#182;</a></h2><p>The first step to creating an optimized Q-Learning driving agent is getting the agent to actually take valid actions. In this case, a valid action is one of <code>None</code>, (do nothing) <code>'Left'</code> (turn left), <code>'Right'</code> (turn right), or <code>'Forward'</code> (go forward). For your first implementation, navigate to the <code>'choose_action()'</code> agent function and make the driving agent randomly choose one of these actions. Note that you have access to several class variables that will help you write this functionality, such as <code>'self.learning'</code> and <code>'self.valid_actions'</code>. Once implemented, run the agent file and simulation briefly to confirm that your driving agent is taking a random action each time step.</p>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -1279,7 +1290,7 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Basic-Agent-Simulation-Results">Basic Agent Simulation Results<a class="anchor-link" href="#Basic-Agent-Simulation-Results">¶</a></h3><p>To obtain results from the initial simulation, you will need to adjust following flags:</p>
+<h3 id="Basic-Agent-Simulation-Results">Basic Agent Simulation Results<a class="anchor-link" href="#Basic-Agent-Simulation-Results">&#182;</a></h3><p>To obtain results from the initial simulation, you will need to adjust following flags:</p>
 <ul>
 <li><code>'enforce_deadline'</code> - Set this to <code>True</code> to force the driving agent to capture whether it reaches the destination in time.</li>
 <li><code>'update_delay'</code> - Set this to a small value (such as <code>0.01</code>) to reduce the time between steps in each trial.</li>
@@ -1289,24 +1300,32 @@ h6:hover .anchor-link {
 <p>Optionally, you may disable to the visual simulation (which can make the trials go faster) by setting the <code>'display'</code> flag to <code>False</code>. Flags that have been set here should be returned to their default setting when debugging. It is important that you understand what each flag does and how it affects the simulation!</p>
 <p>Once you have successfully completed the initial simulation (there should have been 20 training trials and 10 testing trials), run the code cell below to visualize the results. Note that log files are overwritten when identical simulations are run, so be careful with what log file is being loaded!
 Run the agent.py file after setting the flags from projects/smartcab folder instead of projects/smartcab/smartcab.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the 'sim_no-learning' log file from the initial simulation results</span>
-<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">'sim_no-learning.csv'</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_no-learning&#39; log file from the initial simulation results</span>
+<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">&#39;sim_no-learning.csv&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKYAAAMVCAYAAABN5/yzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmczWX/x/HXObaZQQiDQkZDRZpsWZJb7tuS7CI7yVYp
@@ -2827,17 +2846,20 @@ dD1IZFZJkiRJaoCBKUlSU8qzo8pX36vU/gJwElEY/BngWKI4el0DxzfWd/kxNxOBqNL2z4iV9nZI
 SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk
 SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">¶</a></h3><p>Using the visualization above that was produced from your initial simulation, provide an analysis and make several observations about the driving agent. Be sure that you are making at least one observation about each panel present in the visualization. Some things you could consider:</p>
+<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h3><p>Using the visualization above that was produced from your initial simulation, provide an analysis and make several observations about the driving agent. Be sure that you are making at least one observation about each panel present in the visualization. Some things you could consider:</p>
 <ul>
 <li><em>How frequently is the driving agent making bad decisions? How many of those bad decisions cause accidents?</em></li>
 <li><em>Given that the agent is driving randomly, does the rate of reliabilty make sense?</em></li>
@@ -2845,6 +2867,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <li><em>As the number of trials increases, does the outcome of results change significantly?</em></li>
 <li><em>Would this Smartcab be considered safe and/or reliable for its passengers? Why or why not?</em></li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -2859,6 +2882,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <p>The agent is receiving in average negative rewards for his actions, and since is frequently making bad decisions, this also make sense.</p>
 <p>As the number of trials increases the results does not change significantly, except maybe the rate of reliability which decrease as the trails increases.</p>
 <p>No, it would not be consider safe because the agent is taking random decision with a high frequency of accidents and a very low score on reliability.</p>
+
 </div>
 </div>
 </div>
@@ -2868,8 +2892,9 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Inform-the-Driving-Agent">Inform the Driving Agent<a class="anchor-link" href="#Inform-the-Driving-Agent">¶</a></h2><p>The second step to creating an optimized Q-learning driving agent is defining a set of states that the agent can occupy in the environment. Depending on the input, sensory data, and additional variables available to the driving agent, a set of states can be defined for the agent so that it can eventually <em>learn</em> what action it should take when occupying a state. The condition of <code>'if state then action'</code> for each state is called a <strong>policy</strong>, and is ultimately what the driving agent is expected to learn. Without defining states, the driving agent would never understand which action is most optimal -- or even what environmental variables and conditions it cares about!</p>
-</hr></div>
+<h2 id="Inform-the-Driving-Agent">Inform the Driving Agent<a class="anchor-link" href="#Inform-the-Driving-Agent">&#182;</a></h2><p>The second step to creating an optimized Q-learning driving agent is defining a set of states that the agent can occupy in the environment. Depending on the input, sensory data, and additional variables available to the driving agent, a set of states can be defined for the agent so that it can eventually <em>learn</em> what action it should take when occupying a state. The condition of <code>'if state then action'</code> for each state is called a <strong>policy</strong>, and is ultimately what the driving agent is expected to learn. Without defining states, the driving agent would never understand which action is most optimal -- or even what environmental variables and conditions it cares about!</p>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -2877,7 +2902,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Identify-States">Identify States<a class="anchor-link" href="#Identify-States">¶</a></h3><p>Inspecting the <code>'build_state()'</code> agent function shows that the driving agent is given the following data from the environment:</p>
+<h3 id="Identify-States">Identify States<a class="anchor-link" href="#Identify-States">&#182;</a></h3><p>Inspecting the <code>'build_state()'</code> agent function shows that the driving agent is given the following data from the environment:</p>
 <ul>
 <li><code>'waypoint'</code>, which is the direction the <em>Smartcab</em> should drive leading to the destination, relative to the <em>Smartcab</em>'s heading.</li>
 <li><code>'inputs'</code>, which is the sensor data from the <em>Smartcab</em>. It includes <ul>
@@ -2889,6 +2914,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </li>
 <li><code>'deadline'</code>, which is the number of actions remaining for the <em>Smartcab</em> to reach the destination before running out of time.</li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -2897,7 +2923,8 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">¶</a></h3><p><em>Which features available to the agent are most relevant for learning both <strong>safety</strong> and <strong>efficiency</strong>? Why are these features appropriate for modeling the </em>Smartcab<em> in the environment? If you did not choose some features, why are those features</em> not <em>appropriate?</em></p>
+<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">&#182;</a></h3><p><em>Which features available to the agent are most relevant for learning both <strong>safety</strong> and <strong>efficiency</strong>? Why are these features appropriate for modeling the </em>Smartcab<em> in the environment? If you did not choose some features, why are those features</em> not <em>appropriate?</em></p>
+
 </div>
 </div>
 </div>
@@ -2927,6 +2954,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <p>'left' and 'oncoming' will also determine the actions the agent need to take to be in accordance with the U.S. Right-of-Way rules.</p>
 <p>'deadline',is not important since the optimal direction the Smartcab should drive leading to the destination is provided in 'waypoint'. Also 'deadline' could influence the agent in making illegal moves when the deadline is near and if we were to include the deadline into our current state, our state space would blow up, we would suffer from the curse of dimensionality and it would take a long time for the q-matrix to converge.</p>
 <p>'rigth' as stated in the pseudo code above this feature is not important according to the right of way rules.</p>
+
 </div>
 </div>
 </div>
@@ -2935,9 +2963,10 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Define-a-State-Space">Define a State Space<a class="anchor-link" href="#Define-a-State-Space">¶</a></h3><p>When defining a set of states that the agent can occupy, it is necessary to consider the <em>size</em> of the state space. That is to say, if you expect the driving agent to learn a <strong>policy</strong> for each state, you would need to have an optimal action for <em>every</em> state the agent can occupy. If the number of all possible states is very large, it might be the case that the driving agent never learns what to do in some states, which can lead to uninformed decisions. For example, consider a case where the following features are used to define the state of the <em>Smartcab</em>:</p>
+<h3 id="Define-a-State-Space">Define a State Space<a class="anchor-link" href="#Define-a-State-Space">&#182;</a></h3><p>When defining a set of states that the agent can occupy, it is necessary to consider the <em>size</em> of the state space. That is to say, if you expect the driving agent to learn a <strong>policy</strong> for each state, you would need to have an optimal action for <em>every</em> state the agent can occupy. If the number of all possible states is very large, it might be the case that the driving agent never learns what to do in some states, which can lead to uninformed decisions. For example, consider a case where the following features are used to define the state of the <em>Smartcab</em>:</p>
 <p><code>('is_raining', 'is_foggy', 'is_red_light', 'turn_left', 'no_traffic', 'previous_turn_left', 'time_of_day')</code>.</p>
 <p>How frequently would the agent occupy a state like <code>(False, True, True, True, False, False, '3AM')</code>? Without a near-infinite amount of time for training, it's doubtful the agent would ever learn the proper action!</p>
+
 </div>
 </div>
 </div>
@@ -2946,8 +2975,9 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">¶</a></h3><p><em>If a state is defined using the features you've selected from <strong>Question 4</strong>, what would be the size of the state space? Given what you know about the evironment and how it is simulated, do you think the driving agent could learn a policy for each possible state within a reasonable number of training trials?</em><br>
-<strong>Hint:</strong> Consider the <em>combinations</em> of features to calculate the total number of states!</br></p>
+<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">&#182;</a></h3><p><em>If a state is defined using the features you've selected from <strong>Question 4</strong>, what would be the size of the state space? Given what you know about the evironment and how it is simulated, do you think the driving agent could learn a policy for each possible state within a reasonable number of training trials?</em><br>
+<strong>Hint:</strong> Consider the <em>combinations</em> of features to calculate the total number of states!</p>
+
 </div>
 </div>
 </div>
@@ -2970,6 +3000,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </ul>
 <p>Space size = 3 ('waypoint') x 2 ('ligth') x 4 ('oncoming') x 4 ('left') = 96 states</p>
 <p>Because there is 96 possible states and 4 actions that the agent could take in each one of them, the number of training trails should be at least 384. The number is somewhat high but for the agent to learn with a high degree of safety such number of trails will be necessary.</p>
+
 </div>
 </div>
 </div>
@@ -2978,8 +3009,9 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Update-the-Driving-Agent-State">Update the Driving Agent State<a class="anchor-link" href="#Update-the-Driving-Agent-State">¶</a></h3><p>For your second implementation, navigate to the <code>'build_state()'</code> agent function. With the justification you've provided in <strong>Question 4</strong>, you will now set the <code>'state'</code> variable to a tuple of all the features necessary for Q-Learning. Confirm your driving agent is updating its state by running the agent file and simulation briefly and note whether the state is displaying. If the visual simulation is used, confirm that the updated state corresponds with what is seen in the simulation.</p>
+<h3 id="Update-the-Driving-Agent-State">Update the Driving Agent State<a class="anchor-link" href="#Update-the-Driving-Agent-State">&#182;</a></h3><p>For your second implementation, navigate to the <code>'build_state()'</code> agent function. With the justification you've provided in <strong>Question 4</strong>, you will now set the <code>'state'</code> variable to a tuple of all the features necessary for Q-Learning. Confirm your driving agent is updating its state by running the agent file and simulation briefly and note whether the state is displaying. If the visual simulation is used, confirm that the updated state corresponds with what is seen in the simulation.</p>
 <p><strong>Note:</strong> Remember to reset simulation flags to their default setting when making this observation!</p>
+
 </div>
 </div>
 </div>
@@ -2989,8 +3021,9 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Implement-a-Q-Learning-Driving-Agent">Implement a Q-Learning Driving Agent<a class="anchor-link" href="#Implement-a-Q-Learning-Driving-Agent">¶</a></h2><p>The third step to creating an optimized Q-Learning agent is to begin implementing the functionality of Q-Learning itself. The concept of Q-Learning is fairly straightforward: For every state the agent visits, create an entry in the Q-table for all state-action pairs available. Then, when the agent encounters a state and performs an action, update the Q-value associated with that state-action pair based on the reward received and the interative update rule implemented. Of course, additional benefits come from Q-Learning, such that we can have the agent choose the <em>best</em> action for each state based on the Q-values of each state-action pair possible. For this project, you will be implementing a <em>decaying,</em> $\epsilon$<em>-greedy</em> Q-learning algorithm with <em>no</em> discount factor. Follow the implementation instructions under each <strong>TODO</strong> in the agent functions.</p>
+<h2 id="Implement-a-Q-Learning-Driving-Agent">Implement a Q-Learning Driving Agent<a class="anchor-link" href="#Implement-a-Q-Learning-Driving-Agent">&#182;</a></h2><p>The third step to creating an optimized Q-Learning agent is to begin implementing the functionality of Q-Learning itself. The concept of Q-Learning is fairly straightforward: For every state the agent visits, create an entry in the Q-table for all state-action pairs available. Then, when the agent encounters a state and performs an action, update the Q-value associated with that state-action pair based on the reward received and the interative update rule implemented. Of course, additional benefits come from Q-Learning, such that we can have the agent choose the <em>best</em> action for each state based on the Q-values of each state-action pair possible. For this project, you will be implementing a <em>decaying,</em> $\epsilon$<em>-greedy</em> Q-learning algorithm with <em>no</em> discount factor. Follow the implementation instructions under each <strong>TODO</strong> in the agent functions.</p>
 <p>Note that the agent attribute <code>self.Q</code> is a dictionary: This is how the Q-table will be formed. Each state will be a key of the <code>self.Q</code> dictionary, and each value will then be another dictionary that holds the <em>action</em> and <em>Q-value</em>. Here is an example:</p>
+
 <pre><code>{ 'state-1': { 
     'action-1' : Qvalue-1,
     'action-2' : Qvalue-2,
@@ -3003,7 +3036,8 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
    ...
 }</code></pre>
 <p>Furthermore, note that you are expected to use a <em>decaying</em> $\epsilon$ <em>(exploration) factor</em>. Hence, as the number of trials increases, $\epsilon$ should decrease towards 0. This is because the agent is expected to learn from its behavior and begin acting on its learned behavior. Additionally, The agent will be tested on what it has learned after $\epsilon$ has passed a certain threshold (the default threshold is 0.01). For the initial Q-Learning implementation, you will be implementing a linear decaying function for $\epsilon$.</p>
-</hr></div>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -3011,7 +3045,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Q-Learning-Simulation-Results">Q-Learning Simulation Results<a class="anchor-link" href="#Q-Learning-Simulation-Results">¶</a></h3><p>To obtain results from the initial Q-Learning implementation, you will need to adjust the following flags and setup:</p>
+<h3 id="Q-Learning-Simulation-Results">Q-Learning Simulation Results<a class="anchor-link" href="#Q-Learning-Simulation-Results">&#182;</a></h3><p>To obtain results from the initial Q-Learning implementation, you will need to adjust the following flags and setup:</p>
 <ul>
 <li><code>'enforce_deadline'</code> - Set this to <code>True</code> to force the driving agent to capture whether it reaches the destination in time.</li>
 <li><code>'update_delay'</code> - Set this to a small value (such as <code>0.01</code>) to reduce the time between steps in each trial.</li>
@@ -3022,6 +3056,7 @@ SZIkSZIkSZIkSZIkSZIkdTD/D5YZwtlFwVcSAAAAAElFTkSuQmCC
 <p>In addition, use the following decay function for $\epsilon$:</p>
 $$ \epsilon_{t+1} = \epsilon_{t} - 0.05, \hspace{10px}\textrm{for trial number } t$$<p>If you have difficulty getting your implementation to work, try setting the <code>'verbose'</code> flag to <code>True</code> to help debug. Flags that have been set here should be returned to their default setting when debugging. It is important that you understand what each flag does and how it affects the simulation!</p>
 <p>Once you have successfully completed the initial Q-Learning simulation, run the code cell below to visualize the results. Note that log files are overwritten when identical simulations are run, so be careful with what log file is being loaded!</p>
+
 </div>
 </div>
 </div>
@@ -3030,11 +3065,12 @@ $$ \epsilon_{t+1} = \epsilon_{t} - 0.05, \hspace{10px}\textrm{for trial number }
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Also-modify-choose_action-function">Also modify choose_action function<a class="anchor-link" href="#Also-modify-choose_action-function">¶</a></h3><p>As stated above:</p>
+<h3 id="Also-modify-choose_action-function">Also modify choose_action function<a class="anchor-link" href="#Also-modify-choose_action-function">&#182;</a></h3><p>As stated above:</p>
 <blockquote><p>"Of course, additional benefits come from Q-Learning, such that we can have the agent choose the best action for each state based on the Q-values of each state-action pair possible. "</p>
 </blockquote>
 <p>Therefore:</p>
 <blockquote><p>"As the best action would be to choose a random action from a choice of actions that have the highest Q-value. For example, since all actions are initialized with a reward of zero, it’s possible that all four actions are considered “optimal”. Not having the agent choose a random action from this would imply that it always chooses, perhaps, the first available option. This is incorrect behavior:"</p>
+
 <pre><code>STATE X:
 -- ‘forward’ : 0.00
 -- ‘left’    : 0.00
@@ -3042,24 +3078,32 @@ $$ \epsilon_{t+1} = \epsilon_{t} - 0.05, \hspace{10px}\textrm{for trial number }
 -- ‘None’    : 0.00</code></pre>
 <p>"The agent should choose one of ‘forward’, ‘left’, or ‘None’ with equal probability, since they are all considered optimal with the current learned policy."</p>
 </blockquote>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the 'sim_default-learning' file from the default Q-Learning simulation</span>
-<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">'sim_default-learning.csv'</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_default-learning&#39; file from the default Q-Learning simulation</span>
+<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">&#39;sim_default-learning.csv&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKYAAAMVCAYAAABN5/yzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzs3XmcjeX/+PHXOTMxM4iJkW1khIoke4QviiiyhCxjEKEI
@@ -4736,17 +4780,20 @@ OPBhsv4jYjS+FURw6jXi556CGVSSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmS
 JEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJEmSJKlM/X+adZHZ
 YUkKOAAAAABJRU5ErkJggg==
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">¶</a></h3><p>Using the visualization above that was produced from your default Q-Learning simulation, provide an analysis and make observations about the driving agent like in <strong>Question 3</strong>. Note that the simulation should have also produced the Q-table in a text file which can help you make observations about the agent's learning. Some additional things you could consider:</p>
+<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h3><p>Using the visualization above that was produced from your default Q-Learning simulation, provide an analysis and make observations about the driving agent like in <strong>Question 3</strong>. Note that the simulation should have also produced the Q-table in a text file which can help you make observations about the agent's learning. Some additional things you could consider:</p>
 <ul>
 <li><em>Are there any observations that are similar between the basic driving agent and the default Q-Learning agent?</em></li>
 <li><em>Approximately how many training trials did the driving agent require before testing? Does that number make sense given the epsilon-tolerance?</em></li>
@@ -4754,6 +4801,7 @@ YUkKOAAAAABJRU5ErkJggg==
 <li><em>As the number of training trials increased, did the number of bad actions decrease? Did the average reward increase?</em></li>
 <li><em>How does the safety and reliability rating compare to the initial driving agent?</em></li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -4778,6 +4826,7 @@ YUkKOAAAAABJRU5ErkJggg==
 </li>
 </ol>
 <p>As state above, for the agent to learn with high degree of safety and reliability, at least 384 trails will be needed.</p>
+
 </div>
 </div>
 </div>
@@ -4787,8 +4836,9 @@ YUkKOAAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h2 id="Improve-the-Q-Learning-Driving-Agent">Improve the Q-Learning Driving Agent<a class="anchor-link" href="#Improve-the-Q-Learning-Driving-Agent">¶</a></h2><p>The third step to creating an optimized Q-Learning agent is to perform the optimization! Now that the Q-Learning algorithm is implemented and the driving agent is successfully learning, it's necessary to tune settings and adjust learning paramaters so the driving agent learns both <strong>safety</strong> and <strong>efficiency</strong>. Typically this step will require a lot of trial and error, as some settings will invariably make the learning worse. One thing to keep in mind is the act of learning itself and the time that this takes: In theory, we could allow the agent to learn for an incredibly long amount of time; however, another goal of Q-Learning is to <em>transition from experimenting with unlearned behavior to acting on learned behavior</em>. For example, always allowing the agent to perform a random action during training (if $\epsilon = 1$ and never decays) will certainly make it <em>learn</em>, but never let it <em>act</em>. When improving on your Q-Learning implementation, consider the impliciations it creates and whether it is logistically sensible to make a particular adjustment.</p>
-</hr></div>
+<h2 id="Improve-the-Q-Learning-Driving-Agent">Improve the Q-Learning Driving Agent<a class="anchor-link" href="#Improve-the-Q-Learning-Driving-Agent">&#182;</a></h2><p>The third step to creating an optimized Q-Learning agent is to perform the optimization! Now that the Q-Learning algorithm is implemented and the driving agent is successfully learning, it's necessary to tune settings and adjust learning paramaters so the driving agent learns both <strong>safety</strong> and <strong>efficiency</strong>. Typically this step will require a lot of trial and error, as some settings will invariably make the learning worse. One thing to keep in mind is the act of learning itself and the time that this takes: In theory, we could allow the agent to learn for an incredibly long amount of time; however, another goal of Q-Learning is to <em>transition from experimenting with unlearned behavior to acting on learned behavior</em>. For example, always allowing the agent to perform a random action during training (if $\epsilon = 1$ and never decays) will certainly make it <em>learn</em>, but never let it <em>act</em>. When improving on your Q-Learning implementation, consider the impliciations it creates and whether it is logistically sensible to make a particular adjustment.</p>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -4796,7 +4846,7 @@ YUkKOAAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Improved-Q-Learning-Simulation-Results">Improved Q-Learning Simulation Results<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results">¶</a></h3><p>To obtain results from the initial Q-Learning implementation, you will need to adjust the following flags and setup:</p>
+<h3 id="Improved-Q-Learning-Simulation-Results">Improved Q-Learning Simulation Results<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results">&#182;</a></h3><p>To obtain results from the initial Q-Learning implementation, you will need to adjust the following flags and setup:</p>
 <ul>
 <li><code>'enforce_deadline'</code> - Set this to <code>True</code> to force the driving agent to capture whether it reaches the destination in time.</li>
 <li><code>'update_delay'</code> - Set this to a small value (such as <code>0.01</code>) to reduce the time between steps in each trial.</li>
@@ -4815,6 +4865,7 @@ YUkKOAAAAABJRU5ErkJggg==
 $$ \epsilon = a^t, \textrm{for } 0 < a < 1 \hspace{50px}\epsilon = \frac{1}{t^2}\hspace{50px}\epsilon = e^{-at}, \textrm{for } 0 < a < 1 \hspace{50px} \epsilon = \cos(at), \textrm{for } 0 < a < 1$$<p>You may also use a decaying function for $\alpha$ (the learning rate) if you so choose, however this is typically less common. If you do so, be sure that it adheres to the inequality $0 \leq \alpha \leq 1$.</p>
 <p>If you have difficulty getting your implementation to work, try setting the <code>'verbose'</code> flag to <code>True</code> to help debug. Flags that have been set here should be returned to their default setting when debugging. It is important that you understand what each flag does and how it affects the simulation!</p>
 <p>Once you have successfully completed the improved Q-Learning simulation, run the code cell below to visualize the results. Note that log files are overwritten when identical simulations are run, so be careful with what log file is being loaded!</p>
+
 </div>
 </div>
 </div>
@@ -4823,21 +4874,22 @@ $$ \epsilon = a^t, \textrm{for } 0 < a < 1 \hspace{50px}\epsilon = \frac{1}{t^2}
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Exponential-Decay">Exponential Decay<a class="anchor-link" href="#Exponential-Decay">¶</a></h4><p>Exponential decay, tweaking variable $a$, $epsilon = 10 * e^{-at}, \textrm{for } 0 < a < 1$: 
-<img alt="Exponential decay blog.nerdbucket.com" src="https://blog.nerdbucket.com/wp-content/uploads/2009/05/graph.jpg" /></p>
+<h4 id="Exponential-Decay">Exponential Decay<a class="anchor-link" href="#Exponential-Decay">&#182;</a></h4><p>Exponential decay, tweaking variable $a$, $epsilon = 10 * e^{-at}, \textrm{for } 0 < a < 1$: 
+<img src="https://blog.nerdbucket.com/wp-content/uploads/2009/05/graph.jpg" alt="Exponential decay blog.nerdbucket.com"></p>
 <p>Red: a = 2</p>
 <p>Green: a = 1</p>
 <p>Blue: a = 0.5</p>
 <p>Yellow: a = 0.25</p>
 <p>Cyan: a = 0.125</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [27]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
@@ -4847,28 +4899,37 @@ $$ \epsilon = a^t, \textrm{for } 0 < a < 1 \hspace{50px}\epsilon = \frac{1}{t^2}
 
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'$t$'</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$exp(-a*t)$'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$t$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$exp(-a*t)$&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [28]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">exponential_decay</span><span class="p">(</span><span class="mf">0.0125</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiUAAAF5CAYAAABAyVr6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzt3XeYVOXd//H3Lh0RFhASC6jYUUSK2BAJYokRlUSjawVi
@@ -5082,52 +5143,69 @@ khTVPGDj2EVIyq5msQuQpCoOBsYA2wHlqe2DqBVJkqSCNQr4fewiJGWfY0okJc0+wLTYRUiSJL0H
 dCb8o6lT5FokZZFXSiQlyUbAKmARcDzQMm45krLJga6SkmQFMBBoTxjg+lrcciRJkiRJkiRJkiRJ
 kiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkqR6/H9wfIUZaDgn6QAAAABJRU5ErkJggg==
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-<div class="input_area">
+    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># estimating the  minimum tolerance</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="n">t</span> <span class="o">=</span> <span class="mi">384</span>
 <span class="n">a</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span> <span class="o">/</span> <span class="n">t</span>
 <span class="k">print</span> <span class="n">a</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.0119926306927
 </pre>
 </div>
 </div>
+
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the 'sim_improved-learning' file from the improved Q-Learning simulation</span>
-<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">'sim_improved-learning.csv'</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_improved-learning&#39; file from the improved Q-Learning simulation</span>
+<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">&#39;sim_improved-learning.csv&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKYAAAMVCAYAAABN5/yzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzsnXd4FcXXgN+EEJLQgtQohIAIAaQ3UcQAoiAoRbAgCiJN
@@ -7748,17 +7826,20 @@ Y+rvHdXluxn7nu4/X7ajcfLe1dXN1auq11S3T/V3NU7j+3cjOHVL43vfnBVUAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwGPI/wG9ufn5Lrvp
 IQAAAABJRU5ErkJggg==
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">¶</a></h3><p>Using the visualization above that was produced from your improved Q-Learning simulation, provide a final analysis and make observations about the improved driving agent like in <strong>Question 6</strong>. Questions you should answer:</p>
+<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h3><p>Using the visualization above that was produced from your improved Q-Learning simulation, provide a final analysis and make observations about the improved driving agent like in <strong>Question 6</strong>. Questions you should answer:</p>
 <ul>
 <li><em>What decaying function was used for epsilon (the exploration factor)?</em></li>
 <li><em>Approximately how many training trials were needed for your agent before begining testing?</em></li>
@@ -7767,6 +7848,7 @@ IQAAAABJRU5ErkJggg==
 <li><em>Would you say that the Q-Learner results show that your driving agent successfully learned an appropriate policy?</em></li>
 <li><em>Are you satisfied with the safety and reliability ratings of the </em>Smartcab<em>?</em></li>
 </ul>
+
 </div>
 </div>
 </div>
@@ -7797,6 +7879,7 @@ IQAAAABJRU5ErkJggg==
 <li><p>Yes, both the safety and reliability ratings are A+. Meaning the agent commits no traffic violations, and always chooses the correct action and the agent reaches the destination in time for 100% of trips.</p>
 </li>
 </ol>
+
 </div>
 </div>
 </div>
@@ -7805,25 +7888,32 @@ IQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Improved-Q-Learning-Simulation-Results-100-testing">Improved Q-Learning Simulation Results 100 testing<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results-100-testing">¶</a></h3>
+<h3 id="Improved-Q-Learning-Simulation-Results-100-testing">Improved Q-Learning Simulation Results 100 testing<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results-100-testing">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the 'sim_improved-learning' file from the improved Q-Learning simulation</span>
-<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">'sim_improved-learning.csv'</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_improved-learning&#39; file from the improved Q-Learning simulation</span>
+<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">&#39;sim_improved-learning.csv&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKYAAAMVCAYAAABN5/yzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzsnXd81eT3x99tGR3sXQVklD0KCDJEfgUFRAQZypItCmgV
@@ -10408,35 +10498,45 @@ zioAAGANhSkAfmLeHTXfvrfu/LE6bQwGv6+OG8PRVxviv8o9j7luFKI+n782Nu3tTflOqosN//7d
 9+dnq8bmvdtqWR1Uh9XzdP/S2Mb31ihOPTTevUwHFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCPfAAl66qOR/t5eAAAAABJRU5ErkJggg==
 ">
-</img></div>
+</div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Improved-Q-Learning-Simulation-Results-100-testing-with-random-maxQ">Improved Q-Learning Simulation Results 100 testing with random maxQ<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results-100-testing-with-random-maxQ">¶</a></h3>
+<h3 id="Improved-Q-Learning-Simulation-Results-100-testing-with-random-maxQ">Improved Q-Learning Simulation Results 100 testing with random maxQ<a class="anchor-link" href="#Improved-Q-Learning-Simulation-Results-100-testing-with-random-maxQ">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the 'sim_improved-learning' file from the improved Q-Learning simulation</span>
-<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">'sim_improved-learning.csv'</span><span class="p">)</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Load the &#39;sim_improved-learning&#39; file from the improved Q-Learning simulation</span>
+<span class="n">vs</span><span class="o">.</span><span class="n">plot_trials</span><span class="p">(</span><span class="s1">&#39;sim_improved-learning.csv&#39;</span><span class="p">)</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
 <div class="prompt"></div>
+
+
+
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABKYAAAMVCAYAAABN5/yzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAAPYQAAD2EBqD+naQAAIABJREFUeJzsnXd4FFXXwH9JKKH3QOggvQgKSBEQeD9AUVR6kQ4qKiqC
@@ -12943,8 +13043,21 @@ UZtqf2A3IqPrZiKzSpIkSVINBqYkSfWozo6q3n2vVvt84DSiMPitwClEcfSefs4faOzqcy4nAlHZ
 SZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIk
 SZIkSZIkSZIkSZIkSZIkSZIkSZIkSRpB/j/f5brxt9uifQAAAABJRU5ErkJggg==
 ">
-</img></div>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Define-an-Optimal-Policy">Define an Optimal Policy<a class="anchor-link" href="#Define-an-Optimal-Policy">&#182;</a></h3><p>Sometimes, the answer to the important question <em>"what am I trying to get my agent to learn?"</em> only has a theoretical answer and cannot be concretely described. Here, however, you can concretely define what it is the agent is trying to learn, and that is the U.S. right-of-way traffic laws. Since these laws are known information, you can further define, for each state the <em>Smartcab</em> is occupying, the optimal action for the driving agent based on these laws. In that case, we call the set of optimal state-action pairs an <strong>optimal policy</strong>. Hence, unlike some theoretical answers, it is clear whether the agent is acting "incorrectly" not only by the reward (penalty) it receives, but also by pure observation. If the agent drives through a red light, we both see it receive a negative reward but also know that it is not the correct behavior. This can be used to your advantage for verifying whether the <strong>policy</strong> your driving agent has learned is the correct one, or if it is a <strong>suboptimal policy</strong>.</p>
+
 </div>
 </div>
 </div>
@@ -12953,16 +13066,8 @@ SZIkSZIkSZIkSZIkSZIkSZIkSZIkSRpB/j/f5brxt9uifQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Define-an-Optimal-Policy">Define an Optimal Policy<a class="anchor-link" href="#Define-an-Optimal-Policy">¶</a></h3><p>Sometimes, the answer to the important question <em>"what am I trying to get my agent to learn?"</em> only has a theoretical answer and cannot be concretely described. Here, however, you can concretely define what it is the agent is trying to learn, and that is the U.S. right-of-way traffic laws. Since these laws are known information, you can further define, for each state the <em>Smartcab</em> is occupying, the optimal action for the driving agent based on these laws. In that case, we call the set of optimal state-action pairs an <strong>optimal policy</strong>. Hence, unlike some theoretical answers, it is clear whether the agent is acting "incorrectly" not only by the reward (penalty) it receives, but also by pure observation. If the agent drives through a red light, we both see it receive a negative reward but also know that it is not the correct behavior. This can be used to your advantage for verifying whether the <strong>policy</strong> your driving agent has learned is the correct one, or if it is a <strong>suboptimal policy</strong>.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">¶</a></h3><p>Provide a few examples (using the states you've defined) of what an optimal policy for this problem would look like. Afterwards, investigate the <code>'sim_improved-learning.txt'</code> text file to see the results of your improved Q-Learning algorithm. <em>For each state that has been recorded from the simulation, is the <strong>policy</strong> (the action with the highest value) correct for the given state? Are there any states where the policy is different than what would be expected from an optimal policy?</em> Provide an example of a state and all state-action rewards recorded, and explain why it is the correct policy.</p>
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h3><p>Provide a few examples (using the states you've defined) of what an optimal policy for this problem would look like. Afterwards, investigate the <code>'sim_improved-learning.txt'</code> text file to see the results of your improved Q-Learning algorithm. <em>For each state that has been recorded from the simulation, is the <strong>policy</strong> (the action with the highest value) correct for the given state? Are there any states where the policy is different than what would be expected from an optimal policy?</em> Provide an example of a state and all state-action rewards recorded, and explain why it is the correct policy.</p>
+
 </div>
 </div>
 </div>
@@ -13067,59 +13172,69 @@ SZIkSZIkSZIkSZIkSZIkSZIkSZIkSRpB/j/f5brxt9uifQAAAABJRU5ErkJggg==
 </table>
 <p>The policy is correct in most instances for the 8 cases:</p>
 <p>1:</p>
+
 <pre><code>('right', 'red', 'forward', None)
  -- forward : -38.95
  -- right : -19.08
  -- None : 2.11
  -- left : -40.61</code></pre>
 <p>2:</p>
+
 <pre><code>('right', 'green', 'forward', 'right')
  -- forward : 0.20
  -- right : 2.38
  -- None : -4.50
  -- left : -19.20</code></pre>
 <p>3:</p>
+
 <pre><code>('left', 'green', 'forward', None)
  -- forward : 0.77
  -- right : 0.26
  -- None : -5.55
  -- left : 2.27</code></pre>
 <p>4:</p>
+
 <pre><code>('left', 'green', 'right', None)
  -- forward : 0.38
  -- right : 0.94
  -- None : -5.46
  -- left : 2.12</code></pre>
 <p>5:</p>
+
 <pre><code>('left', 'green', 'left', 'left')
  -- forward : 0.84
  -- right : 0.05
  -- None : 0.13
  -- left : 2.76</code></pre>
 <p>6:</p>
+
 <pre><code>('left', 'red', 'right', None)
  -- forward : -9.56
  -- right : -0.22
  -- None : 2.54
  -- left : -8.99</code></pre>
 <p>7:</p>
+
 <pre><code>('forward', 'red', 'left', None)
  -- forward : -9.93
  -- right : 0.74
  -- None : 2.53
  -- left : -9.39</code></pre>
 <p>8:</p>
+
 <pre><code>('forward', 'green', 'right', 'forward')
  -- forward : 1.34
  -- right : 1.04
  -- None : 0.00
  -- left : -16.06</code></pre>
 <p>Yes, there some states where the policy is different from the optimal, for example:</p>
+
 <pre><code>('left', 'green', 'forward', 'right')
  -- forward : 0.00
  -- right : 0.81
  -- None : -4.23
  -- left : -16.22</code></pre>
+
 <pre><code>('left', 'green', 'left', 'forward')
  -- forward : 1.45
  -- right : -0.01
@@ -13129,6 +13244,7 @@ SZIkSZIkSZIkSZIkSZIkSZIkSZIkSRpB/j/f5brxt9uifQAAAABJRU5ErkJggg==
 <ol>
 <li>Optimal policy:</li>
 </ol>
+
 <pre><code>('right', 'red', 'forward', None)
  -- forward : -38.95
  -- right : -19.08
@@ -13147,6 +13263,7 @@ On a green light, a left turn is permitted if there is no oncoming traffic makin
 <blockquote><p>"This state that we still see a 0.0 q-value. Thus probably more training trials would help the agent to encounter this state a bit more."</p>
 <p>"There are multiple dummy agents in this state. Therefore maybe look into increasing the number of dummy agents to learn more of the states in the beginning trials."</p>
 </blockquote>
+
 </div>
 </div>
 </div>
@@ -13156,8 +13273,9 @@ On a green light, a left turn is permitted if there is no oncoming traffic makin
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
-<h3 id="Optional:-Future-Rewards---Discount-Factor,-'gamma'">Optional: Future Rewards - Discount Factor, <code>'gamma'</code><a class="anchor-link" href="#Optional:-Future-Rewards---Discount-Factor,-'gamma'">¶</a></h3><p>Curiously, as part of the Q-Learning algorithm, you were asked to <strong>not</strong> use the discount factor, <code>'gamma'</code> in the implementation. Including future rewards in the algorithm is used to aid in propogating positive rewards backwards from a future state to the current state. Essentially, if the driving agent is given the option to make several actions to arrive at different states, including future rewards will bias the agent towards states that could provide even more rewards. An example of this would be the driving agent moving towards a goal: With all actions and rewards equal, moving towards the goal would theoretically yield better rewards if there is an additional reward for reaching the goal. However, even though in this project, the driving agent is trying to reach a destination in the allotted time, including future rewards will not benefit the agent. In fact, if the agent were given many trials to learn, it could negatively affect Q-values!</p>
-</hr></div>
+<h3 id="Optional:-Future-Rewards---Discount-Factor,-'gamma'">Optional: Future Rewards - Discount Factor, <code>'gamma'</code><a class="anchor-link" href="#Optional:-Future-Rewards---Discount-Factor,-'gamma'">&#182;</a></h3><p>Curiously, as part of the Q-Learning algorithm, you were asked to <strong>not</strong> use the discount factor, <code>'gamma'</code> in the implementation. Including future rewards in the algorithm is used to aid in propogating positive rewards backwards from a future state to the current state. Essentially, if the driving agent is given the option to make several actions to arrive at different states, including future rewards will bias the agent towards states that could provide even more rewards. An example of this would be the driving agent moving towards a goal: With all actions and rewards equal, moving towards the goal would theoretically yield better rewards if there is an additional reward for reaching the goal. However, even though in this project, the driving agent is trying to reach a destination in the allotted time, including future rewards will not benefit the agent. In fact, if the agent were given many trials to learn, it could negatively affect Q-values!</p>
+
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
@@ -13165,7 +13283,8 @@ On a green light, a left turn is permitted if there is no oncoming traffic makin
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Optional-Question-9">Optional Question 9<a class="anchor-link" href="#Optional-Question-9">¶</a></h3><p><em>There are two characteristics about the project that invalidate the use of future rewards in the Q-Learning algorithm. One characteristic has to do with the </em>Smartcab<em> itself, and the other has to do with the environment. Can you figure out what they are and why future rewards won't work for this project?</em></p>
+<h3 id="Optional-Question-9">Optional Question 9<a class="anchor-link" href="#Optional-Question-9">&#182;</a></h3><p><em>There are two characteristics about the project that invalidate the use of future rewards in the Q-Learning algorithm. One characteristic has to do with the </em>Smartcab<em> itself, and the other has to do with the environment. Can you figure out what they are and why future rewards won't work for this project?</em></p>
+
 </div>
 </div>
 </div>
@@ -13176,9 +13295,12 @@ On a green light, a left turn is permitted if there is no oncoming traffic makin
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>In the environment the rules of way applied, so even if the agent has more future reward, these laws must be respected to arrive at the destination safely.</p>
+
 </div>
 </div>
 </div>
+ 
+
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
