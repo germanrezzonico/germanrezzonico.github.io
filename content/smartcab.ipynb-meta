@@ -1,0 +1,8 @@
+Title: Train a Smartcab to Drive
+Slug: smart-cab
+Date: 2017-01-07 12:00
+Category: Machine Learning
+Tags: python, Reinforcement learning, Q-learning, Optimization, Modeling, Model tuning, Statistics, Algebra, Calculus
+Author: German Rezzonico
+Summary: Applied a Q-learning algorithm in Python to build a vehicle navigation agent. Designed a scheme to automatically learn an optimal driving strategy. Achieved a Q-learner with A+ and A+ ratings in both Safety and Reliability (no traffic violations, always chooses the correct action and reaches the destination in time for 100% of trips)
+header_cover: images/smart_cab.jpg

@@ -1,16 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+# from _future_ import unicode_literals
 
-AUTHOR = u'German Rezzonico'
-SITENAME = u'Machine Learning and More'
+AUTHOR = 'German Rezzonico'
+SITENAME = 'Machine Learning and More'
 SITEURL = ''
 
+GOOGLE_ANALYTICS = 'UA-96990928-1'
+
 PATH = 'content'
+OUTPUT_PATH = 'output'
+
+THEME = 'themes/pelican-clean-blog'
 
 TIMEZONE = 'America/Argentina/Buenos_Aires'
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -34,9 +39,19 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
+
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATH = './plugins'
 PLUGINS = ['ipynb.markup']
 
-THEME = 'themes/nest'
+## Custom
+
+SOCIAL = (('linkedin', 'https://www.linkedin.com/in/germanrezzonico'),
+          ('github', 'https://github.com/germanrezzonico'),
+          ('facebook','https://www.facebook.com/germanrezzonico'),
+          ('envelope','mailto:germanrezzonico@gmail.com'))
+          
+HEADER_COVER = 'images/stock_desk.jpg'
+
+IPYNB_USE_META_SUMMARY = True

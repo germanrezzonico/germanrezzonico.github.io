@@ -1,0 +1,8 @@
+Title: Building a Student Intervention System
+Slug: student-intervention
+Date: 2017-01-03 12:00
+Category: Machine Learning
+Tags: python, Sklearn, Regression vs classification type problems, Model fitting and prediction, Decision trees, Regression, Neural networks, Support vector machines, Naive bayes, K-nearest neighbors, Adaboosting
+Author: German Rezzonico
+Summary: Investigated the factors that affect a student's performance in high school. Trained and tested several supervised machine learning models on a given dataset to predict how likely a student is to pass. Selected the best model based on relative accuracy and efficiency. Tuned model through GridSearchCV.
+header_cover: images/student_intervention.jpg

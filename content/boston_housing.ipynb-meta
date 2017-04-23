@@ -1,0 +1,8 @@
+Title: Boston Housing
+Slug: boston-housing
+Date: 2016-12-27 12:00
+Category: Machine Learning
+Tags: python, statistical analysis, metric performance, cross validation, bias/underfitting & variance overfitting, learning curves, model complexity, model tuning
+Author: German Rezzonico
+Summary: Predicting Boston Housing Prices.
+header_cover: images/boston_housing.jpg

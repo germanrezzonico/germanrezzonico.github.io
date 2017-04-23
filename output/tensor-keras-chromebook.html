@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Installing tensorflow and keras on a Chromebook</title>
+
+            <link href="https://germanrezzonico.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Full Atom Feed" />
+            <link href="https://germanrezzonico.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Machine Learning and More Categories Atom Feed" />
+        <!-- Bootstrap Core CSS -->
+        <link href="https://germanrezzonico.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="https://germanrezzonico.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="https://germanrezzonico.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802.">
+
+        <meta name="author" content="German Rezzonico">
+
+        <meta name="tags" content="python">
+        <meta name="tags" content="chromebook">
+        <meta name="tags" content="ubuntu">
+        <meta name="tags" content="tensorflow">
+        <meta name="tags" content="keras">
+        <meta name="tags" content="neural network">
+        <meta name="tags" content="Acer C720">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Machine Learning and More">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="https://germanrezzonico.github.io/author/german-rezzonico.html">
+	<meta property="og:url" content="https://germanrezzonico.github.io/tensor-keras-chromebook.html">
+	<meta property="og:title" content="Installing tensorflow and keras on a Chromebook">
+	<meta property="article:published_time" content="2017-04-10 13:30:00-03:00">
+            <meta property="og:description" content="Installing tensorflow and keras on a Chromebook Acer C720-2802.">
+
+            <meta property="og:image" content="https://germanrezzonico.github.io//images/chromebook.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://germanrezzonico.github.io/">Machine Learning and More</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/images/chromebook.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Installing tensorflow and keras on a Chromebook</h1>
+                        <span class="meta">Posted by
+                                <a href="https://germanrezzonico.github.io/author/german-rezzonico.html">German Rezzonico</a>
+                             on Mon 10 April 2017
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <h1>Instructions</h1>
+<h2>Install python 2.7, python-pip and python-dev</h2>
+<p>Installing python2.7 will update to the latest version of Python 2.7, and python-pip will install Pip which allows us to manage Python packages we would like to use. Some of Jupyter’s dependencies may require compilation, in which case you would need the ability to compile Python C-extensions, so we are installing python-dev as well.</p>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python2.7 python-pip python-dev
+</pre></div>
+
+
+<h2>To verify that you have python and pip installed:</h2>
+<div class="highlight"><pre><span></span>python --version
+pip --version
+</pre></div>
+
+
+<h2>Installing Ipython</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install -f ipython ipython-notebook
+</pre></div>
+
+
+<h2>Installing Jupyter Notebook</h2>
+<p>-H, --set-home
+Request that the security policy set the HOME environment variable to the home directory specified by the target user's password database entry. Depending on the policy, this may be the default behavior.</p>
+<div class="highlight"><pre><span></span>sudo -H pip install jupyter
+</pre></div>
+
+
+<h3>If any error --&gt; Upgrade pip to the latest version</h3>
+<div class="highlight"><pre><span></span>sudo -H pip install --upgrade pip
+</pre></div>
+
+
+<h3>Try installing Jupyter again</h3>
+<div class="highlight"><pre><span></span>sudo -H pip install jupyter
+</pre></div>
+
+
+<h2>Running Jupyter Notebook</h2>
+<div class="highlight"><pre><span></span>jupyter notebook
+</pre></div>
+
+
+<h2>Install packages</h2>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python-numpy python-pandas python-matplotlib
+
+sudo apt-get install -f build-essential python-dev python-setuptools python-numpy python-scipy libatlas-dev libatlas3gf-base libfreetype6-dev libpng-dev g++ python-matplotlib
+
+sudo apt-get install -f python-numpy-dev g++
+
+sudo -H pip install scikit-learn
+</pre></div>
+
+
+<p>To upgrade:</p>
+<div class="highlight"><pre><span></span>sudo -H pip install --upgrade pandas
+sudo -H pip install matplotlib --upgrade
+</pre></div>
+
+
+<h3>Install seaborn</h3>
+<p>Download latest version of seaborn .tar.gz</p>
+<div class="highlight"><pre><span></span>tar -xzf seaborn-file.tar.gz
+cd seaborn-path/
+sudo python setup.py install
+</pre></div>
+
+
+<h3>Install matplotlib Toolkits</h3>
+<p>http://matplotlib.org/1.4.3/mpl_toolkits/index.html</p>
+<p>https://peak5390.wordpress.com/2012/12/08/matplotlib-basemap-tutorial-installing-matplotlib-and-basemap/</p>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python-mpltoolkits.basemap
+</pre></div>
+
+
+<h3>Install <a href="https://xgboost.readthedocs.io/en/latest/build.html">xgboost</a></h3>
+<div class="highlight"><pre><span></span>git clone --recursive https://github.com/dmlc/xgboost
+<span class="nb">cd</span> xgboost<span class="p">;</span> cp make/config.mk ./config.mk<span class="p">;</span> make -j4
+python setup.py develop --user
+</pre></div>
+
+
+<h3>Install tensorflow with virtualenv</h3>
+<p>https://www.tensorflow.org/install/install_linux</p>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python-pip python-dev python-virtualenv
+virtualenv --system-site-packages tensorflow # target diectory
+source ~/tensorflow/bin/activate # (tensorflow)$
+pip install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.1-cp27-none-linux_x86_64.whl # pip version lower than 8.1 Python 2.7  and cpu only
+</pre></div>
+
+
+<h4>Activate the virtualenv environment each time you use TensorFlow</h4>
+<div class="highlight"><pre><span></span>source ~/tensorflow/bin/activate
+</pre></div>
+
+
+<p>You shoul get something like this:
+(tensorflow)$</p>
+<p>To deactivate:</p>
+<div class="highlight"><pre><span></span>deactivate
+</pre></div>
+
+
+<h4>Validate your tensorflow installation</h4>
+<p>Active your container</p>
+<div class="highlight"><pre><span></span><span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">hello</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">constant</span><span class="p">(</span><span class="s1">&#39;Hello, TensorFlow!&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sess</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Hello</span><span class="p">,</span> <span class="n">TensorFlow</span><span class="err">!</span>
+</pre></div>
+
+
+<h4>Uninstalling TensorFlow</h4>
+<div class="highlight"><pre><span></span>rm -r targetDirectory
+</pre></div>
+
+
+<h3>Install pydot and graphviz (for NN graph)</h3>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python-pydot
+sudo -H pip install pydot-ng
+sudo -H pip install pydot --upgrade
+
+sudo apt-get install -f graphviz
+</pre></div>
+
+
+<h3>Install plotly (for EDA)</h3>
+<div class="highlight"><pre><span></span>sudo -h pip install plotly
+</pre></div>
+
+
+<h3>Install keras</h3>
+<p>https://keras.io/#installation</p>
+<h4>Required dependencies</h4>
+<ul>
+<li>numpy, scipy</li>
+<li>yaml</li>
+<li>HDF5 and h5py (optional, required if you use model saving/loading functions)</li>
+<li>Optional but recommended if you use CNNs: cuDNN.</li>
+</ul>
+<div class="highlight"><pre><span></span>sudo apt-get install -f python-yaml
+sudo apt-get install -f libhdf5-dev
+sudo apt-get install -f python-h5py
+</pre></div>
+
+
+<h4>Install keras</h4>
+<div class="highlight"><pre><span></span>sudo -H pip install keras
+</pre></div>
+
+
+<h4>Using a virtualenv in an IPython notebook (install kernels)</h4>
+<p>https://help.pythonanywhere.com/pages/IPythonNotebookVirtualenvs/</p>
+<div class="highlight"><pre><span></span>source ~/tensorflow/bin/activate
+python2 -m ipykernel install --user
+python -m ipykernel install --user --name tensorflow --display-name &quot;Python tensorflow&quot;
+</pre></div>
+
+
+<h2>Using Jupyter Notebook</h2>
+<p>Automatically, Jupyter Notebook will show all of the files and folders in the directory it is run from.</p>
+<p>To create a new notebook file, select New &gt; Python 2 from the top right pull-down menu.</p>
+<p><img alt="Alt jupyter new file" src="https://assets.digitalocean.com/articles/jupyter_notebook/create_python2_notebook.png"></p>
+<p>This will open a notebook. We can now run Python code in the cell or change the cell to markdown. For example, change the first cell to accept Markdown by clicking Cell &gt; Cell Type &gt; Markdown from the top navigation bar. We can now write notes using Markdown and even include equations written in LaTeX by putting them between the $$ symbols. For example, type the following into the cell after changing it to markdown:</p>
+<div class="highlight"><pre><span></span># Simple Equation
+
+Let us now implement the following equation:
+$$ y = x^2$$
+
+where $x = 2$
+</pre></div>
+
+
+<p>To turn the markdown into rich text, press CTRL+ENTER:</p>
+<p><img alt="Alt jupyter markdown" src="https://assets.digitalocean.com/articles/jupyter_notebook/markdown_results.png"></p>
+<p>You can use the markdown cells to make notes and document your code. Let's implement that simple equation and print the result. Select Insert &gt; Insert Cell Below to insert and cell and enter the following code:</p>
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="k">print</span> <span class="n">y</span>
+</pre></div>
+
+
+<p><img alt="Alt jupyter run code" src="https://assets.digitalocean.com/articles/jupyter_notebook/equations_results.png"></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="https://germanrezzonico.github.io/tag/python.html">python</a>, <a href="https://germanrezzonico.github.io/tag/chromebook.html">chromebook</a>, <a href="https://germanrezzonico.github.io/tag/ubuntu.html">ubuntu</a>, <a href="https://germanrezzonico.github.io/tag/tensorflow.html">tensorflow</a>, <a href="https://germanrezzonico.github.io/tag/keras.html">keras</a>, <a href="https://germanrezzonico.github.io/tag/neural-network.html">neural network</a>, <a href="https://germanrezzonico.github.io/tag/acer-c720.html">Acer C720</a></p>
+        </div>
+
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://www.linkedin.com/in/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/germanrezzonico">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:germanrezzonico@gmail.com">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://germanrezzonico.github.io/theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://germanrezzonico.github.io/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="https://germanrezzonico.github.io/theme/js/clean-blog.min.js"></script>
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-96990928-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+
+</html>
