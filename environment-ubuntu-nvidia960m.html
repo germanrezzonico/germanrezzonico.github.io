@@ -115,8 +115,7 @@
 <h2>Requirements</h2>
 <p>We will set up a machine learning development environment on Ubuntu 16.04.2 LTS and TensorFlow with GPU support. The installation was done at a laptop with a Geforce GTX 960M graphics card, the laptop also has an integrated GPU. </p>
 <h2>Instructions:</h2>
-<p>We will follow some instructions found at:
-http://berge.io/deep-blog/2016/9/7/how-to-install-tensorflow-with-gpu-support-on-a-machine-with-ubuntuv</p>
+<p>We will follow some instructions found <a href="http://berge.io/deep-blog/2016/9/7/how-to-install-tensorflow-with-gpu-support-on-a-machine-with-ubuntuv">here</a></p>
 <h3>MiniConda installation</h3>
 <p>Download the bash installer for miniconda <a href="https://conda.io/miniconda.html">here</a></p>
 <p>Exceute the miniconda bash installer:</p>
@@ -147,10 +146,9 @@ http://berge.io/deep-blog/2016/9/7/how-to-install-tensorflow-with-gpu-support-on
 <h3>Driver installation</h3>
 <p>Open Software &amp; Updates, Additional Drivers and install the corresponding drivers to your hardware.</p>
 <h3>Cuda installation</h3>
-<p>Download the Cuda Toolkit, in this case we will install CUDA Toolkit 8.0
-https://developer.nvidia.com/cuda-downloads</p>
-<p>Follow <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/#axzz4f7BvqguO">this instructions</a>
-<strong>Make sure to follow ALL the steps!</strong></p>
+<p>Download the Cuda Toolkit, in this case we will install <a href="https://developer.nvidia.com/cuda-downloads">CUDA Toolkit 8.0</a></p>
+<p>Follow <a href="http://docs.nvidia.com/cuda/cuda-installation-guide-linux/#axzz4f7BvqguO">this instructions</a></p>
+<p><strong>Make sure to follow ALL the steps!</strong></p>
 <p>As a recap, this is what you will be doing:</p>
 <div class="highlight"><pre><span></span>sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
 sudo apt-get update
@@ -160,8 +158,7 @@ sudo apt-get install cuda
 
 <p>On the Post installation actions of the guide, be sure to check the path where cuda is installed and export that path.</p>
 <h3>cuDNN installation</h3>
-<p>Cudnn can be downloaded here:
-https://developer.nvidia.com/cudnn
+<p>Cudnn can be downloaded <a href="https://developer.nvidia.com/cudnn">here</a>
 You need a login to get the cudnn drivers.</p>
 <p>We will install cuDNN v5.1 (Jan 20, 2017) because this version is supported by tensorflow (cuDNN v6.0 is not at this point), download: CUDA 8.0 cuDNN v5.1 Library for Linux.</p>
 <p>Once you have downloaded cuDNN execute the following commands as stated <a href="https://alliseesolutions.wordpress.com/2016/09/08/install-gpu-tensorflow-from-sources-w-ubuntu-16-04-and-cuda-8-0-rc/">here</a>: </p>
@@ -180,8 +177,8 @@ pip install --ignore-installed --upgrade tensorflow-gpu
 
 
 <h3>Environment variables</h3>
-<p>http://blog.mrtanke.com/2016/10/25/Install-and-Configure-GPU-enabled-TensorFlow-using-Anaconda/
-We need to set the LD_LIBRARY_PATH (if you follow the instructions from nvidia cuda toolkit installation guide this should be already set) and CUDA_HOME environment variables. So I add the following commands to the end of ~/.bashrc</p>
+<p>More instructions <a href="http://blog.mrtanke.com/2016/10/25/Install-and-Configure-GPU-enabled-TensorFlow-using-Anaconda/">here</a></p>
+<p>We need to set the LD_LIBRARY_PATH (if you follow the instructions from nvidia cuda toolkit installation guide this should be already set) and CUDA_HOME environment variables. So I add the following commands to the end of ~/.bashrc</p>
 <div class="highlight"><pre><span></span><span class="c1"># Path to Cuda toolkit</span>
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-8.0/bin<span class="si">${</span><span class="nv">PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}}</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-8.0/lib64<span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="p">:+:</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}}</span>
@@ -198,7 +195,7 @@ import tensorslow
 </pre></div>
 
 
-<p>It shows:</p>
+<p>You should get these results:</p>
 <div class="highlight"><pre><span></span>I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcublas.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcudnn.so.5 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcufft.so.8.0 locally
