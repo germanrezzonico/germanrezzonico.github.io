@@ -188,7 +188,7 @@ pip install --ignore-installed --upgrade tensorflow-gpu
 </pre></div>
 
 
-<h3>Congrats, now you should test the installation</h3>
+<h3>Congrats!, now you should test the installation</h3>
 <div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
 python <span class="m">3</span>
 import tensorslow
@@ -201,6 +201,18 @@ I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfu
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcufft.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcurand.so.8.0 locally
+</pre></div>
+
+
+<h3>In case you upgrade your linux kernels you will need to uninstall cuda and then reinstall it</h3>
+<p>To remove cuda</p>
+<div class="highlight"><pre><span></span>sudo dpkg --remove cuda
+</pre></div>
+
+
+<p>Reinstall cuda</p>
+<div class="highlight"><pre><span></span>sudo apt-get update
+sudo apt-get install cuda
 </pre></div>
     </article>
 
