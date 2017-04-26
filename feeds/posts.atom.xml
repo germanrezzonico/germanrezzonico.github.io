@@ -92,8 +92,20 @@ I tensorflow/stream_executor/dso_loader.cc:135&lt;span class="o"&gt;]&lt;/span&g
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h3&gt;It is not recommended to upgrade the linux kernels because it will break cuda toolkit, so you may want to freeze the kernel:&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://askubuntu.com/questions/678630/how-can-i-avoid-kernel-updates"&gt;avoid kernel upgrades&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Check installed kernels&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -l &lt;span class="p"&gt;|&lt;/span&gt; grep linux-image
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can freeze any package including kernel packages by&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-mark hold &amp;lt;package_name&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;In case you upgrade your linux kernels you will need to uninstall cuda and then reinstall it&lt;/h3&gt;
-&lt;p&gt;To remove cuda&lt;/p&gt;
+&lt;p&gt;Remove cuda&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo dpkg --remove cuda
 &lt;/pre&gt;&lt;/div&gt;
 

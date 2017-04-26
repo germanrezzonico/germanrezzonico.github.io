@@ -204,8 +204,20 @@ I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfu
 </pre></div>
 
 
+<h3>It is not recommended to upgrade the linux kernels because it will break cuda toolkit, so you may want to freeze the kernel:</h3>
+<p><a href="https://askubuntu.com/questions/678630/how-can-i-avoid-kernel-updates">avoid kernel upgrades</a></p>
+<p>Check installed kernels</p>
+<div class="highlight"><pre><span></span>dpkg -l <span class="p">|</span> grep linux-image
+</pre></div>
+
+
+<p>You can freeze any package including kernel packages by</p>
+<div class="highlight"><pre><span></span>sudo apt-mark hold &lt;package_name&gt;
+</pre></div>
+
+
 <h3>In case you upgrade your linux kernels you will need to uninstall cuda and then reinstall it</h3>
-<p>To remove cuda</p>
+<p>Remove cuda</p>
 <div class="highlight"><pre><span></span>sudo dpkg --remove cuda
 </pre></div>
 
