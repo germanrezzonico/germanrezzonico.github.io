@@ -78,7 +78,7 @@ pip install --ignore-installed --upgrade tensorflow-gpu
 
 &lt;h3&gt;Congrats!, now you should test the installation&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate environment_name
-python &lt;span class="m"&gt;3&lt;/span&gt;
+python3
 import tensorslow
 &lt;/pre&gt;&lt;/div&gt;
 
