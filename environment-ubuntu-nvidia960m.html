@@ -169,13 +169,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 </pre></div>
 
 
-<h3>Tensorflow installation</h3>
-<div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
-conda install pip
-pip install --ignore-installed --upgrade tensorflow-gpu
-</pre></div>
-
-
 <h3>Environment variables</h3>
 <p>More instructions <a href="http://blog.mrtanke.com/2016/10/25/Install-and-Configure-GPU-enabled-TensorFlow-using-Anaconda/">here</a></p>
 <p>We need to set the LD_LIBRARY_PATH (if you follow the instructions from nvidia cuda toolkit installation guide this should be already set) and CUDA_HOME environment variables. So I add the following commands to the end of ~/.bashrc</p>
@@ -185,6 +178,13 @@ pip install --ignore-installed --upgrade tensorflow-gpu
 <span class="c1"># Path to cudnn</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;</span>
 <span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda
+</pre></div>
+
+
+<h3>Tensorflow installation</h3>
+<div class="highlight"><pre><span></span><span class="nb">source</span> activate environment_name
+conda install pip
+pip install --ignore-installed --upgrade tensorflow-gpu
 </pre></div>
 
 
@@ -201,6 +201,11 @@ I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfu
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcufft.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:135<span class="o">]</span> successfully opened CUDA library libcurand.so.8.0 locally
+</pre></div>
+
+
+<h3>Install Keras</h3>
+<div class="highlight"><pre><span></span>conda install keras-gpu
 </pre></div>
 
 

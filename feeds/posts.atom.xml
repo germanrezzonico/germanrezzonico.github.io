@@ -57,13 +57,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Tensorflow installation&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate environment_name
-conda install pip
-pip install --ignore-installed --upgrade tensorflow-gpu
-&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3&gt;Environment variables&lt;/h3&gt;
 &lt;p&gt;More instructions &lt;a href="http://blog.mrtanke.com/2016/10/25/Install-and-Configure-GPU-enabled-TensorFlow-using-Anaconda/"&gt;here&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We need to set the LD_LIBRARY_PATH (if you follow the instructions from nvidia cuda toolkit installation guide this should be already set) and CUDA_HOME environment variables. So I add the following commands to the end of ~/.bashrc&lt;/p&gt;
@@ -73,6 +66,13 @@ pip install --ignore-installed --upgrade tensorflow-gpu
 &lt;span class="c1"&gt;# Path to cudnn&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LD_LIBRARY_PATH&lt;/span&gt;&lt;span class="s2"&gt;:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&amp;quot;&lt;/span&gt;
 &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;CUDA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/cuda
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Tensorflow installation&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt; activate environment_name
+conda install pip
+pip install --ignore-installed --upgrade tensorflow-gpu
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -89,6 +89,11 @@ I tensorflow/stream_executor/dso_loader.cc:135&lt;span class="o"&gt;]&lt;/span&g
 I tensorflow/stream_executor/dso_loader.cc:135&lt;span class="o"&gt;]&lt;/span&gt; successfully opened CUDA library libcufft.so.8.0 locally
 I tensorflow/stream_executor/dso_loader.cc:135&lt;span class="o"&gt;]&lt;/span&gt; successfully opened CUDA library libcuda.so.1 locally
 I tensorflow/stream_executor/dso_loader.cc:135&lt;span class="o"&gt;]&lt;/span&gt; successfully opened CUDA library libcurand.so.8.0 locally
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Install Keras&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda install keras-gpu
 &lt;/pre&gt;&lt;/div&gt;
 
 
