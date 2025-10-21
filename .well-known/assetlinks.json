@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.byte42.portfolio",
+            "sha256_cert_fingerprints": [
+                "39:EE:89:37:8E:19:B5:74:38:17:64:89:68:4D:5B:C8:CC:38:DD:29:BD:F9:D5:93:4A:7F:3A:8A:E1:29:27:BC"
+            ]
+        }
+    }
+]
